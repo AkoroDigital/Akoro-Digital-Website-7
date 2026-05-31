@@ -34,7 +34,6 @@
       overflow-x: hidden;
     }
 
-    /* ── NOISE OVERLAY ── */
     body::before {
       content: '';
       position: fixed; inset: 0;
@@ -44,7 +43,6 @@
       opacity: 0.4;
     }
 
-    /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 100;
@@ -79,11 +77,9 @@
     }
     .nav-links a:hover { color: var(--gold-light); }
 
-    /* ── SECTIONS ── */
     .page { display: none; }
     .page.active { display: block; }
 
-    /* ── HERO ── */
     #hero {
       min-height: 100vh;
       display: flex; flex-direction: column;
@@ -193,14 +189,12 @@
     }
     .btn-ghost:hover { border-color: var(--white-dim); color: var(--white); }
 
-    /* ── GOLD DIVIDER ── */
     .gold-line {
       width: 60px; height: 1px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
       margin: 0 auto 1rem;
     }
 
-    /* ── ABOUT PAGE ── */
     .about-wrap {
       min-height: 100vh;
       padding: 10rem 5vw 6rem;
@@ -401,6 +395,55 @@
     }
     .founder-contact a:hover { color: var(--gold-light); }
 
+    /* Team photo card (middle slot) */
+    .team-photo-card {
+      background: var(--black-card);
+      border: 1px solid var(--black-border);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.4s, transform 0.4s;
+      display: flex;
+      flex-direction: column;
+    }
+    .team-photo-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .team-photo-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .team-photo-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); }
+
+    .team-photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      min-height: 400px;
+      filter: grayscale(15%) contrast(1.05);
+      transition: filter 0.5s;
+    }
+    .team-photo-card:hover img {
+      filter: grayscale(0%) contrast(1.1);
+    }
+
+    .team-photo-caption {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1.2rem 1.5rem;
+      background: linear-gradient(to top, rgba(5,5,5,0.92) 0%, transparent 100%);
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+    }
+
     /* ── CONTACT PAGE ── */
     .contact-wrap {
       min-height: 100vh;
@@ -511,7 +554,6 @@
     .form-submit:hover { color: var(--black); }
     .form-submit span { position: relative; z-index: 1; }
 
-    /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--black-border);
       padding: 2.5rem 5vw;
@@ -530,7 +572,6 @@
       color: var(--white-dim);
     }
 
-    /* ── ANIMATIONS ── */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(24px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -543,7 +584,6 @@
     }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .about-grid { grid-template-columns: 1fr; }
       .founders-grid { grid-template-columns: 1fr; }
@@ -586,7 +626,7 @@
   </section>
   <footer>
     <div class="footer-logo">AKORO DIGITAL</div>
-    <div class="footer-copy">© 2025 Akoro Digital. All rights reserved. &nbsp;|&nbsp; <a href="mailto:AkoroDigital@gmail.com" style="color:var(--gold-dim);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='var(--gold-dim)'">AkoroDigital@gmail.com</a></div>
+    <div class="footer-copy">© 2026 Akoro Digital. All rights reserved. &nbsp;|&nbsp; <a href="mailto:AkoroDigital@gmail.com" style="color:var(--gold-dim);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='var(--gold-dim)'">AkoroDigital@gmail.com</a></div>
   </footer>
 </div>
 
@@ -627,7 +667,7 @@
   </div>
   <footer>
     <div class="footer-logo">AKORO DIGITAL</div>
-    <div class="footer-copy">© 2025 Akoro Digital. All rights reserved. &nbsp;|&nbsp; <a href="mailto:AkoroDigital@gmail.com" style="color:var(--gold-dim);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='var(--gold-dim)'">AkoroDigital@gmail.com</a></div>
+    <div class="footer-copy">© 2026 Akoro Digital. All rights reserved. &nbsp;|&nbsp; <a href="mailto:AkoroDigital@gmail.com" style="color:var(--gold-dim);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='var(--gold-dim)'">AkoroDigital@gmail.com</a></div>
   </footer>
 </div>
 
@@ -657,6 +697,12 @@
         </ul>
       </div>
 
+      <!-- TEAM PHOTO (middle) -->
+      <div class="team-photo-card reveal">
+        <img src="./team-photo.PNG" alt="Akoro Digital Team" />
+        <div class="team-photo-caption">Akoro Digital — The Team</div>
+      </div>
+
       <!-- NATHAN -->
       <div class="founder-card reveal">
         <div class="founder-avatar">
@@ -674,28 +720,11 @@
         </ul>
       </div>
 
-      <!-- ARJUN -->
-      <div class="founder-card reveal">
-        <div class="founder-avatar">
-          <span class="founder-initials">AM</span>
-        </div>
-        <div class="founder-name">Arjun Murali</div>
-        <div class="founder-role">Co-Founder &amp; CMO</div>
-        <p class="founder-bio">
-          Arjun drives Akoro's growth through data-driven marketing and creative campaigns that resonate. With expertise in digital marketing, SEO, and analytics, he ensures every campaign delivers measurable impact. Arjun's approach blends creativity with precision to maximize every marketing dollar.
-        </p>
-        <div class="founder-divider"></div>
-        <ul class="founder-contact">
-          <li><span>🔗</span> <a href="https://www.linkedin.com/in/arjun-murali-0a612032a/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
-          <li><span>📍</span> New York, NY</li>
-        </ul>
-      </div>
-
     </div>
   </div>
   <footer>
     <div class="footer-logo">AKORO DIGITAL</div>
-    <div class="footer-copy">© 2025 Akoro Digital. All rights reserved. &nbsp;|&nbsp; <a href="mailto:AkoroDigital@gmail.com" style="color:var(--gold-dim);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='var(--gold-dim)'">AkoroDigital@gmail.com</a></div>
+    <div class="footer-copy">© 2026 Akoro Digital. All rights reserved. &nbsp;|&nbsp; <a href="mailto:AkoroDigital@gmail.com" style="color:var(--gold-dim);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='var(--gold-dim)'">AkoroDigital@gmail.com</a></div>
   </footer>
 </div>
 
@@ -726,7 +755,6 @@
         </div>
       </div>
 
-      <!-- Contact Form -->
       <div class="contact-card reveal" style="margin-top:1.5rem;">
         <p class="section-label" style="margin-bottom:1.5rem;">Send a Message</p>
         <div class="contact-form">
@@ -760,7 +788,7 @@
   </div>
   <footer>
     <div class="footer-logo">AKORO DIGITAL</div>
-    <div class="footer-copy">© 2025 Akoro Digital. All rights reserved. &nbsp;|&nbsp; <a href="mailto:AkoroDigital@gmail.com" style="color:var(--gold-dim);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='var(--gold-dim)'">AkoroDigital@gmail.com</a></div>
+    <div class="footer-copy">© 2026 Akoro Digital. All rights reserved. &nbsp;|&nbsp; <a href="mailto:AkoroDigital@gmail.com" style="color:var(--gold-dim);text-decoration:none;transition:color 0.3s;" onmouseover="this.style.color='var(--gold-light)'" onmouseout="this.style.color='var(--gold-dim)'">AkoroDigital@gmail.com</a></div>
   </footer>
 </div>
 
