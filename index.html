@@ -582,4 +582,428 @@
       font-family: var(--font-display); font-size: 1.2rem;
       color: var(--ink); font-weight: 400;
     }
-    .contact-detail-value a
+    .contact-detail-value a { color: var(--ink); text-decoration: none; transition: color 0.3s; }
+    .contact-detail-value a:hover { color: var(--gold); }
+
+    .contact-form { margin-top: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-label {
+      font-size: 0.6rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .form-input, .form-textarea {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      padding: 0.85rem 1rem;
+      letter-spacing: 0.05em;
+      outline: none;
+      transition: border-color 0.3s, background 0.3s;
+      width: 100%;
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: #b3a98f; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--gold-dim); background: #fff; }
+    .form-textarea { min-height: 120px; resize: vertical; }
+    .form-group-full { margin-bottom: 1rem; }
+
+    .form-submit {
+      margin-top: 1.5rem; width: 100%; padding: 1rem;
+      background: transparent;
+      border: 1px solid var(--gold);
+      border-radius: 4px;
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
+      cursor: pointer; transition: color 0.35s;
+      position: relative; overflow: hidden;
+    }
+    .form-submit::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--gold);
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    .form-submit:hover::before { transform: translateY(0); }
+    .form-submit:hover { color: #fffaf0; }
+    .form-submit span { position: relative; z-index: 1; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 5vw;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1.4rem;
+      background: var(--bg-soft);
+    }
+    .footer-left { display: flex; flex-direction: column; gap: 0.6rem; }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.1rem; color: var(--gold);
+      letter-spacing: 0.15em;
+    }
+    .footer-copy { font-size: 0.62rem; letter-spacing: 0.15em; color: var(--ink-soft); }
+    .footer-copy a { color: var(--gold-dim); text-decoration: none; transition: color 0.3s; }
+    .footer-copy a:hover { color: var(--gold); }
+
+    .footer-social { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; }
+    .social-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.55rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
+      transition: all 0.3s;
+      background: var(--surface);
+    }
+    .social-link svg { width: 15px; height: 15px; fill: currentColor; }
+    .social-link:hover { color: var(--gold); border-color: var(--gold-dim); transform: translateY(-2px); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s, transform 0.7s; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .founders-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-card { padding: 2.2rem; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-toggle { display: flex; }
+      .nav-links {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        flex-direction: column;
+        gap: 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 20px 40px -24px rgba(33,29,22,0.4);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+      .nav-links.open { max-height: 320px; }
+      .nav-links li { width: 100%; border-top: 1px solid var(--border-soft); }
+      .nav-links li:first-child { border-top: none; }
+      .nav-links a { display: block; padding: 1.1rem 6vw; font-size: 0.78rem; }
+      .stats-row { grid-template-columns: 1fr; }
+      footer { flex-direction: column; align-items: flex-start; }
+      .review-text { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" onclick="showPage('home')">
+    <img src="./akoro-logo.png" alt="Akoro Digital" style="height:48px;width:auto;display:block;"/>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a onclick="showPage('home')">Home</a></li>
+    <li><a onclick="showPage('about')">About</a></li>
+    <li><a onclick="showPage('founders')">Founders</a></li>
+    <li><a onclick="showPage('contact')">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════ HOME ══════════ -->
+<div id="page-home" class="page active">
+  <section id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-glow"></div>
+    <p class="hero-eyebrow">Akoro Digital — Redefining the Digital Frontier</p>
+    <h1 class="hero-title">Bold Ideas.<br><span class="gold">Digital</span><br>Reality.</h1>
+    <p class="hero-tagline">We build transformative digital experiences that elevate brands and connect people to what matters.</p>
+    <div class="hero-cta">
+      <button class="btn-gold" onclick="showPage('about')"><span>Discover Us</span></button>
+      <button class="btn-ghost" onclick="showPage('contact')">Get In Touch</button>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews-wrap">
+    <p class="section-label reveal">What Clients Say</p>
+    <h2 class="section-title reveal" style="margin-bottom:0.5rem;">Reviews</h2>
+    <div class="gold-line reveal"></div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Very good service, easy to talk, and he helped me grow my business. He helped me get more clients which is good. If you're looking for someone to help you to grow your business this is the right person!</p>
+        <div class="review-author">
+          <div class="review-avatar">CG</div>
+          <div>
+            <div class="review-name">
+              <a href="https://www.google.com/maps/contrib/100021548354192630778/reviews?authuser=4&hl=en" target="_blank" rel="noopener">Cristian Gallegos</a>
+            </div>
+            <div class="review-source">Google Review</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews-cta reveal">
+      <a class="btn-gold" href="https://share.google/XRFYDhEQpNCxzt5Md" target="_blank" rel="noopener"><span>Read More Reviews</span></a>
+      <a class="btn-ghost" href="https://share.google/XRFYDhEQpNCxzt5Md" target="_blank" rel="noopener">Leave a Review</a>
+    </div>
+  </section>
+
+  <footer></footer>
+</div>
+
+<!-- ══════════ ABOUT ══════════ -->
+<div id="page-about" class="page">
+  <div class="about-wrap">
+    <p class="section-label reveal">Our Story</p>
+    <h2 class="section-title reveal">We Are <em>Akoro</em><br>Digital</h2>
+    <div class="gold-line reveal"></div>
+
+    <div class="about-grid">
+      <div class="logo-block reveal">
+        <img src="./akoro-logo.png" alt="Akoro Digital Logo"/>
+      </div>
+
+      <div class="about-text">
+        <p class="reveal"><strong>Akoro Digital</strong> is a forward-thinking digital agency founded by two visionaries who believe that the intersection of technology, creativity, and strategy is where great businesses are built.</p>
+        <p class="reveal">We partner with brands and entrepreneurs to craft compelling digital identities — from sleek web experiences and strategic content to data-driven marketing campaigns that convert. Our team brings together expertise across design, development, and growth strategy.</p>
+        <p class="reveal">At Akoro, we don't just build products — we build <strong>momentum</strong>. Every pixel, every line of code, every campaign is engineered with intention.</p>
+        <p class="reveal">Our name, <em style="color:var(--gold);font-style:italic;">Akoro</em>, embodies our mission: to be the cornerstone of your digital presence — strong, reliable, and enduring.</p>
+      </div>
+    </div>
+
+    <div class="stats-row reveal">
+      <div class="stat-item"><span class="stat-num">2</span><span class="stat-label">Founders</span></div>
+      <div class="stat-item"><span class="stat-num">∞</span><span class="stat-label">Ambition</span></div>
+      <div class="stat-item"><span class="stat-num">1</span><span class="stat-label">Vision</span></div>
+    </div>
+  </div>
+  <footer></footer>
+</div>
+
+<!-- ══════════ FOUNDERS ══════════ -->
+<div id="page-founders" class="page">
+  <div class="founders-wrap">
+    <p class="section-label reveal">The Team</p>
+    <h2 class="section-title reveal">Meet the <em>Founders</em></h2>
+    <div class="gold-line reveal"></div>
+
+    <div class="founders-grid">
+      <!-- MARCOS -->
+      <div class="founder-card reveal">
+        <div class="founder-avatar"><span class="founder-initials">MP</span></div>
+        <div class="founder-name">Marcos Patino</div>
+        <div class="founder-role">Founder &amp; CEO</div>
+        <p class="founder-bio">
+          Marcos is the strategic heart of Akoro Digital. With a background in brand development and business strategy, he leads the company's vision and client relationships. Marcos believes every brand has a story worth telling — and that the right digital strategy can tell it to the world.
+        </p>
+        <div class="founder-divider"></div>
+        <ul class="founder-contact">
+          <li><span>🔗</span> <a href="https://www.linkedin.com/in/marcos-patino-b5027b34b/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
+          <li><span>📍</span> New York, NY</li>
+        </ul>
+      </div>
+
+      <!-- TEAM PHOTO -->
+      <div class="team-photo-card reveal">
+        <img src="./akoro-team.jpg" alt="Akoro Digital Team" />
+        <div class="team-photo-caption">Akoro Digital — The Team</div>
+      </div>
+
+      <!-- NATHAN -->
+      <div class="founder-card reveal">
+        <div class="founder-avatar"><span class="founder-initials">NH</span></div>
+        <div class="founder-name">Nathan Huen</div>
+        <div class="founder-role">Co-Founder &amp; COO</div>
+        <p class="founder-bio">
+          Nathan is the operational engine of Akoro Digital. Overseeing both day-to-day operations and company finances, he keeps the business running with precision and purpose. Nathan ensures every project is delivered on time, every resource is optimized, and every dollar is working toward the company's growth.
+        </p>
+        <div class="founder-divider"></div>
+        <ul class="founder-contact">
+          <li><span>🔗</span> <a href="https://www.linkedin.com/in/nathan-huen-213916400/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
+          <li><span>📍</span> New York, NY</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+</div>
+
+<!-- ══════════ CONTACT ══════════ -->
+<div id="page-contact" class="page">
+  <div class="contact-wrap">
+    <div class="contact-inner">
+      <p class="section-label reveal">Get In Touch</p>
+      <h2 class="section-title reveal">Let's Build<br><em>Something Great</em></h2>
+      <div class="gold-line reveal"></div>
+
+      <div class="contact-card reveal">
+        <div class="contact-item">
+          <div class="contact-icon">✉</div>
+          <div>
+            <div class="contact-detail-label">General Inquiries</div>
+            <div class="contact-detail-value"><a href="mailto:AkoroDigital@gmail.com">AkoroDigital@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-detail-label">Headquarters</div>
+            <div class="contact-detail-value">United States</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-card reveal" style="margin-top:1.5rem;">
+        <p class="section-label" style="margin-bottom:1.5rem;">Send a Message</p>
+        <div class="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">First Name</label>
+              <input id="cf-first" class="form-input" type="text" placeholder="John"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name</label>
+              <input id="cf-last" class="form-input" type="text" placeholder="Doe"/>
+            </div>
+          </div>
+          <div class="form-group form-group-full">
+            <label class="form-label">Email Address</label>
+            <input id="cf-email" class="form-input" type="email" placeholder="john@example.com"/>
+          </div>
+          <div class="form-group form-group-full">
+            <label class="form-label">Subject</label>
+            <input id="cf-subject" class="form-input" type="text" placeholder="How can we help?"/>
+          </div>
+          <div class="form-group form-group-full">
+            <label class="form-label">Message</label>
+            <textarea id="cf-message" class="form-textarea" placeholder="Tell us about your project..."></textarea>
+          </div>
+          <button id="cf-btn" class="form-submit" onclick="sendMessage()"><span>Send Message</span></button>
+          <p id="cf-status" style="display:none;margin-top:1rem;font-size:0.78rem;letter-spacing:0.08em;text-align:center;"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+</div>
+
+<script>
+  emailjs.init('dzpGHH2-EoOhzRGZh');
+
+  /* Shared footer with social + Google links, injected into every page */
+  var FOOTER_HTML = `
+    <div class="footer-left">
+      <div class="footer-logo">AKORO DIGITAL</div>
+      <div class="footer-copy">© 2026 Akoro Digital. All rights reserved. &nbsp;|&nbsp; <a href="mailto:AkoroDigital@gmail.com">AkoroDigital@gmail.com</a></div>
+    </div>
+    <div class="footer-social">
+      <a class="social-link" href="https://share.google/XRFYDhEQpNCxzt5Md" target="_blank" rel="noopener" aria-label="Google Business Profile">
+        <svg viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.85 3.18-1.73 4.1-1.07 1.07-2.74 2.25-5.69 2.25-4.54 0-8.09-3.66-8.09-8.2s3.55-8.2 8.09-8.2c2.45 0 4.24.96 5.56 2.2l2.31-2.31C18.99 2.18 16.5 1 12.48 1 6.49 1 1.46 5.87 1.46 11.86s5.03 10.86 11.02 10.86c3.24 0 5.68-1.06 7.6-3.06 1.96-1.96 2.57-4.71 2.57-6.94 0-.69-.05-1.33-.16-1.86h-9.99z"/></svg>
+        Google
+      </a>
+      <a class="social-link" href="https://www.instagram.com/akoro.digital" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.12-1.38.66-.66 1.07-1.33 1.38-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.12C21.33 1.36 20.66.95 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.41-10.41a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg>
+        Instagram
+      </a>
+    </div>
+  `;
+  document.querySelectorAll('footer').forEach(function (f) { f.innerHTML = FOOTER_HTML; });
+
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('open');
+    document.getElementById('navToggle').classList.toggle('open');
+  }
+
+  function closeMenu() {
+    document.getElementById('navLinks').classList.remove('open');
+    document.getElementById('navToggle').classList.remove('open');
+  }
+
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    closeMenu();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(initReveal, 100);
+  }
+
+  function sendMessage() {
+    const first   = document.getElementById('cf-first').value.trim();
+    const last    = document.getElementById('cf-last').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const subject = document.getElementById('cf-subject').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+    const btn     = document.getElementById('cf-btn');
+    const status  = document.getElementById('cf-status');
+
+    if (!first || !message) {
+      showStatus('Please fill in at least your first name and message.', 'error');
+      return;
+    }
+
+    const fullName = (first + ' ' + last).trim();
+
+    btn.disabled = true;
+    btn.querySelector('span').textContent = 'Sending…';
+    status.style.display = 'none';
+
+    emailjs.send('service_godr32o', 'template_tr11zso', {
+      from_name:  fullName,
+      from_email: email,
+      subject:    subject || 'Website Inquiry',
+      message:    message
+    })
+    .then(() => {
+      showStatus('✓ Message sent! We\'ll be in touch soon.', 'success');
+      document.getElementById('cf-first').value = '';
+      document.getElementById('cf-last').value = '';
+      document.getElementById('cf-email').value = '';
+      document.getElementById('cf-subject').value = '';
+      document.getElementById('cf-message').value = '';
+      btn.querySelector('span').textContent = 'Send Message';
+      btn.disabled = false;
+    })
+    .catch(() => {
+      showStatus('Something went wrong. Please email us directly at AkoroDigital@gmail.com', 'error');
+      btn.querySelector('span').textContent = 'Send Message';
+      btn.disabled = false;
+    });
+  }
+
+  function showStatus(msg, type) {
+    const el = document.getElementById('cf-status');
+    el.textContent = msg;
+    el.style.display = 'block';
+    el.style.color = type === 'success' ? 'var(--green)' : '#b23b3b';
+  }
+
+  function initReveal() {
+    const els = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+    els.forEach(el => obs.observe(el));
+  }
+
+  initReveal();
+</script>
+</body>
+</html>
