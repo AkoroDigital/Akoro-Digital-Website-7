@@ -9,30 +9,30 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <style>
     :root {
-      /* Warm light luxury palette */
-      --bg: #f2efe4;
-      --bg-soft: #e5e3d8;
-      --surface: #fffdf8;
-      --surface-2: #faf5ea;
-      --border: #e6dcc6;
-      --border-soft: #efe7d6;
+      /* Dark midnight luxury palette */
+      --bg: #07070f;
+      --bg-soft: #0d0d17;
+      --surface: #12121d;
+      --surface-2: #1a1a28;
+      --border: #2c2820;
+      --border-soft: #201d18;
 
-      --ink: #211d16;          /* deep espresso text */
-      --ink-soft: #6f6757;     /* muted text */
+      --ink: #f5efe2;          /* light cream text */
+      --ink-soft: #a89f8c;     /* muted light text */
 
-      --gold: #9a6f1c;         /* deep bronze-gold, legible on light */
-      --gold-mid: #c0922f;
-      --gold-light: #d8b257;
+      --gold: #d8b257;         /* bright bronze-gold, legible on dark */
+      --gold-mid: #c8a043;
+      --gold-light: #ecd28a;
       --gold-dim: #b08a3a;
 
-      --navy: #1b2a4e;         /* brand navy accent */
-      --navy-soft: #2c3f6b;
+      --navy: #5e77bf;         /* lifted brand blue accent */
+      --navy-soft: #41548a;
 
       --font-display: 'Cormorant Garamond', serif;
       --font-body: 'Josefin Sans', sans-serif;
 
-      --logo: url("IMG_1467.jpeg");akoro-logo.png
-      --team: url("team-photo.PNG");team-photo.PNG
+      --logo: url("IMG_1467.jpeg");
+      --team: url("team-photo.PNG");
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -64,7 +64,7 @@
       z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.2rem 5vw;
-      background: linear-gradient(to bottom, rgba(247,243,234,0.98), rgba(247,243,234,0.85) 70%, rgba(247,243,234,0));
+      background: linear-gradient(to bottom, rgba(7,7,15,0.96), rgba(7,7,15,0.82) 70%, rgba(7,7,15,0));
       backdrop-filter: blur(8px);
     }
 
@@ -129,33 +129,48 @@
       overflow: hidden;
       text-align: center;
       padding: 7rem 5vw 4rem;
+      background: #07070f;
+      /* spotlight position — defaults to center, updated by cursor */
+      --hero-mx: 50%;
+      --hero-my: 45%;
     }
 
     .hero-grid {
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(154,111,28,0.07) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(154,111,28,0.07) 1px, transparent 1px);
+        linear-gradient(rgba(216,178,87,0.10) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(216,178,87,0.10) 1px, transparent 1px);
       background-size: 80px 80px;
       mask-image: radial-gradient(ellipse 80% 80% at 50% 45%, black 25%, transparent 100%);
       -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 45%, black 25%, transparent 100%);
+    }
+
+    /* brighter copy of the grid, revealed only in a circle around the cursor */
+    .hero-grid--lit {
+      background-image:
+        linear-gradient(rgba(216,178,87,0.42) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(216,178,87,0.42) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(circle 260px at var(--hero-mx) var(--hero-my), #000 0%, transparent 72%);
+      -webkit-mask-image: radial-gradient(circle 260px at var(--hero-mx) var(--hero-my), #000 0%, transparent 72%);
     }
 
     .hero-glow {
       position: absolute;
       width: 700px; height: 700px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(216,178,87,0.18) 0%, rgba(31,77,64,0.06) 45%, transparent 70%);
-      top: 45%; left: 50%;
+      background: radial-gradient(circle, rgba(255,214,160,0.22) 0%, rgba(216,178,87,0.08) 42%, transparent 70%);
+      top: var(--hero-my); left: var(--hero-mx);
       transform: translate(-50%, -50%);
       pointer-events: none;
+      transition: opacity 0.4s ease;
     }
 
     .hero-eyebrow {
       font-size: 0.68rem;
       letter-spacing: 0.35em;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--gold-light);
       margin-bottom: 1.5rem;
       opacity: 0;
       animation: fadeUp 1s 0.3s forwards;
@@ -172,15 +187,15 @@
       opacity: 0;
       animation: fadeUp 1s 0.5s forwards;
       position: relative;
-      color: var(--ink);
+      color: #f5efe2;
     }
-    .hero-title .gold { color: var(--gold); font-style: italic; }
+    .hero-title .gold { color: var(--gold-light); font-style: italic; }
 
     .hero-tagline {
       font-size: 0.78rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      color: var(--ink-soft);
+      color: rgba(245,239,226,0.62);
       max-width: 480px;
       line-height: 2;
       opacity: 0;
@@ -219,7 +234,7 @@
       transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
     }
     .btn-gold:hover::before { transform: translateY(0); }
-    .btn-gold:hover { color: #fffaf0; }
+    .btn-gold:hover { color: #1a1206; }
     .btn-gold span { position: relative; z-index: 1; }
 
     .btn-ghost {
@@ -234,7 +249,11 @@
       cursor: pointer;
       transition: all 0.35s;
     }
-    .btn-ghost:hover { border-color: var(--navy); color: var(--navy); }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ghost button readable on the dark hero */
+    #hero .btn-ghost { border-color: rgba(245,239,226,0.28); color: rgba(245,239,226,0.85); }
+    #hero .btn-ghost:hover { border-color: var(--gold-light); color: var(--gold-light); }
 
     .gold-line {
       width: 60px; height: 1px;
@@ -281,12 +300,12 @@
       padding: 2.8rem 2.4rem 2.4rem;
       position: relative;
       text-align: left;
-      box-shadow: 0 18px 40px -28px rgba(33,29,22,0.4);
+      box-shadow: 0 18px 40px -28px rgba(0,0,0,0.6);
       transition: transform 0.4s, box-shadow 0.4s;
     }
     .review-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 26px 50px -28px rgba(33,29,22,0.45);
+      box-shadow: 0 26px 50px -28px rgba(0,0,0,0.7);
     }
     .review-card::before {
       content: '\201C';
@@ -326,7 +345,7 @@
       flex-shrink: 0;
     }
     .review-name a {
-      color: var(--navy);
+      color: var(--gold);
       text-decoration: none;
       font-size: 0.82rem;
       letter-spacing: 0.08em;
@@ -366,7 +385,7 @@
       overflow: hidden;
       min-height: 340px;
       padding: 2.5rem;
-      box-shadow: 0 18px 40px -30px rgba(33,29,22,0.4);
+      box-shadow: 0 18px 40px -30px rgba(0,0,0,0.6);
     }
     .logo-block::before {
       content: '';
@@ -436,7 +455,7 @@
       position: relative;
       overflow: hidden;
       transition: border-color 0.4s, transform 0.4s, box-shadow 0.4s;
-      box-shadow: 0 14px 34px -30px rgba(33,29,22,0.4);
+      box-shadow: 0 14px 34px -30px rgba(0,0,0,0.6);
     }
     .founder-card::after {
       content: '';
@@ -446,7 +465,7 @@
       transform: scaleX(0);
       transition: transform 0.4s;
     }
-    .founder-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); box-shadow: 0 24px 44px -30px rgba(33,29,22,0.45); }
+    .founder-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); box-shadow: 0 24px 44px -30px rgba(0,0,0,0.7); }
     .founder-card:hover::after { transform: scaleX(1); }
 
     .founder-avatar {
@@ -498,8 +517,8 @@
       display: flex; align-items: center; gap: 0.6rem;
     }
     .founder-contact li span { color: var(--gold-dim); font-size: 0.65rem; }
-    .founder-contact a { color: var(--navy); text-decoration: none; transition: color 0.3s; }
-    .founder-contact a:hover { color: var(--gold); }
+    .founder-contact a { color: var(--gold); text-decoration: none; transition: color 0.3s; }
+    .founder-contact a:hover { color: var(--gold-light); }
 
     .team-photo-card {
       background: var(--surface);
@@ -509,7 +528,7 @@
       overflow: hidden;
       transition: border-color 0.4s, transform 0.4s, box-shadow 0.4s;
       display: flex; flex-direction: column;
-      box-shadow: 0 14px 34px -30px rgba(33,29,22,0.4);
+      box-shadow: 0 14px 34px -30px rgba(0,0,0,0.6);
     }
     .team-photo-card::before, .team-photo-card::after {
       content: '';
@@ -520,7 +539,7 @@
     }
     .team-photo-card::before { top: 0; }
     .team-photo-card::after { bottom: 0; }
-    .team-photo-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); box-shadow: 0 24px 44px -30px rgba(33,29,22,0.45); }
+    .team-photo-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); box-shadow: 0 24px 44px -30px rgba(0,0,0,0.7); }
     .team-photo-card img {
       width: 100%; height: 100%;
       object-fit: cover; display: block;
@@ -532,7 +551,7 @@
     .team-photo-caption {
       position: absolute; bottom: 0; left: 0; right: 0;
       padding: 1.2rem 1.5rem;
-      background: linear-gradient(to top, rgba(33,29,22,0.85) 0%, transparent 100%);
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
       font-size: 0.62rem;
       letter-spacing: 0.3em;
       text-transform: uppercase;
@@ -554,7 +573,7 @@
       padding: 4rem;
       position: relative;
       margin-top: 3rem;
-      box-shadow: 0 18px 40px -30px rgba(33,29,22,0.4);
+      box-shadow: 0 18px 40px -30px rgba(0,0,0,0.6);
     }
     .contact-card::before {
       content: '';
@@ -605,8 +624,8 @@
       transition: border-color 0.3s, background 0.3s;
       width: 100%;
     }
-    .form-input::placeholder, .form-textarea::placeholder { color: #b3a98f; }
-    .form-input:focus, .form-textarea:focus { border-color: var(--gold-dim); background: #fff; }
+    .form-input::placeholder, .form-textarea::placeholder { color: #6f6757; }
+    .form-input:focus, .form-textarea:focus { border-color: var(--gold-dim); background: #20202e; }
     .form-textarea { min-height: 120px; resize: vertical; }
     .form-group-full { margin-bottom: 1rem; }
 
@@ -628,7 +647,7 @@
       transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
     }
     .form-submit:hover::before { transform: translateY(0); }
-    .form-submit:hover { color: #fffaf0; }
+    .form-submit:hover { color: #1a1206; }
     .form-submit span { position: relative; z-index: 1; }
 
     /* ── FOOTER ── */
@@ -687,7 +706,7 @@
         gap: 0;
         background: var(--surface);
         border-bottom: 1px solid var(--border);
-        box-shadow: 0 20px 40px -24px rgba(33,29,22,0.4);
+        box-shadow: 0 20px 40px -24px rgba(0,0,0,0.6);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease;
@@ -723,7 +742,8 @@
 <div id="page-home" class="page active">
   <section id="hero">
     <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
+    <div class="hero-grid hero-grid--lit"></div>
+    <div class="hero-glow" id="heroGlow"></div>
     <p class="hero-eyebrow">Akoro Digital — Redefining the Digital Frontier</p>
     <h1 class="hero-title">Bold Ideas.<br><span class="gold">Digital</span><br>Reality.</h1>
     <p class="hero-tagline">We build transformative digital experiences that elevate brands and connect people to what matters.</p>
@@ -986,7 +1006,7 @@
     const el = document.getElementById('cf-status');
     el.textContent = msg;
     el.style.display = 'block';
-    el.style.color = type === 'success' ? 'var(--navy)' : '#b23b3b';
+    el.style.color = type === 'success' ? 'var(--gold)' : '#e07a7a';
   }
 
   function initReveal() {
@@ -1002,6 +1022,50 @@
   }
 
   initReveal();
+
+  /* ── Interactive hero spotlight ──
+     Makes the gold glow glide after the cursor and lights up the grid
+     in a circle around it. Falls back to centered (the original look)
+     when the mouse leaves or on touch devices with no pointer. */
+  (function () {
+    const hero = document.getElementById('hero');
+    if (!hero) return;
+    const glow = document.getElementById('heroGlow');
+
+    let rect = hero.getBoundingClientRect();
+    let tx = rect.width / 2,  ty = rect.height * 0.45;   // target (defaults to center)
+    let cx = tx,              cy = ty;                    // current (eased)
+
+    function setVars() {
+      hero.style.setProperty('--hero-mx', cx.toFixed(1) + 'px');
+      hero.style.setProperty('--hero-my', cy.toFixed(1) + 'px');
+    }
+
+    hero.addEventListener('mousemove', (e) => {
+      rect = hero.getBoundingClientRect();
+      tx = e.clientX - rect.left;
+      ty = e.clientY - rect.top;
+      if (glow) glow.style.opacity = 1;
+    });
+
+    hero.addEventListener('mouseleave', () => {
+      rect = hero.getBoundingClientRect();
+      tx = rect.width / 2;
+      ty = rect.height * 0.45;
+    });
+
+    window.addEventListener('resize', () => { rect = hero.getBoundingClientRect(); });
+
+    function tick() {
+      cx += (tx - cx) * 0.12;   // easing — lower = more lag, higher = snappier
+      cy += (ty - cy) * 0.12;
+      setVars();
+      requestAnimationFrame(tick);
+    }
+
+    setVars();
+    tick();
+  })();
 </script>
 </body>
 </html>
