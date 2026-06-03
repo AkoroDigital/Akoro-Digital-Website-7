@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <div id="stage" style="position:relative; height:320px; background:#14142a; overflow:hidden;">
-  <div id="glow" style="position:absolute; width:380px; height:380px;
-       transform:translate(-50%,-50%); border-radius:50%; pointer-events:none;
-       background:radial-gradient(circle, rgba(127,119,221,0.55), rgba(20,20,42,0) 70%);"></div>
-</div>
-
-<script>
-  const stage = document.getElementById('stage');
-  const glow = document.getElementById('glow');
-  stage.addEventListener('mousemove', (e) => {
-    const r = stage.getBoundingClientRect();
-    glow.style.left = (e.clientX - r.left) + 'px';
-    glow.style.top  = (e.clientY - r.top)  + 'px';
-  });
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Akoro Digital | Web Design &amp; Digital Marketing in New York</title>
