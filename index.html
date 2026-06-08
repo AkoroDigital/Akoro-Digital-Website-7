@@ -559,6 +559,159 @@
       text-align: center;
     }
 
+    /* ── SERVICES ── */
+    .services-wrap { min-height: 100vh; padding: 9rem 5vw 6rem; }
+    .services-intro {
+      font-size: 0.9rem;
+      line-height: 2;
+      color: var(--ink-soft);
+      max-width: 640px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3.5rem;
+    }
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 2.8rem 2.4rem;
+      position: relative;
+      overflow: hidden;
+      display: flex; flex-direction: column;
+      transition: border-color 0.4s, transform 0.4s, box-shadow 0.4s;
+      box-shadow: 0 14px 34px -30px rgba(0,0,0,0.6);
+    }
+    .service-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+    .service-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); box-shadow: 0 24px 44px -30px rgba(0,0,0,0.7); }
+    .service-card:hover::after { transform: scaleX(1); }
+
+    .service-card--featured { border-color: var(--gold-dim); }
+    .service-card--featured::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at top right, rgba(216,178,87,0.12), transparent 60%);
+      pointer-events: none;
+    }
+    .service-card--soon { opacity: 0.74; }
+
+    .service-top {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 1.3rem;
+      min-height: 26px;
+      position: relative; z-index: 1;
+    }
+    .service-num {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+    }
+    .service-badge {
+      font-size: 0.55rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #1a1206;
+      background: var(--gold);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+    .service-badge--soon {
+      color: var(--gold);
+      background: transparent;
+      border: 1px solid var(--gold-dim);
+    }
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 1.85rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.12;
+      margin-bottom: 1rem;
+      position: relative; z-index: 1;
+    }
+    .service-desc {
+      font-size: 0.84rem;
+      line-height: 1.95;
+      color: var(--ink-soft);
+      margin-bottom: 1.6rem;
+      position: relative; z-index: 1;
+    }
+    .service-features {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.65rem;
+      margin-bottom: 2.2rem;
+      position: relative; z-index: 1;
+    }
+    .service-features li {
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      display: flex; align-items: center; gap: 0.7rem;
+    }
+    .service-features li::before {
+      content: '';
+      width: 5px; height: 5px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+    .service-cta {
+      margin-top: auto;
+      align-self: flex-start;
+      position: relative; z-index: 1;
+    }
+
+    /* satisfaction band */
+    .satisfaction-band {
+      margin-top: 3.5rem;
+      border: 1px solid var(--gold-dim);
+      border-radius: 6px;
+      background: linear-gradient(135deg, var(--surface), var(--surface-2));
+      padding: 3.2rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .satisfaction-band::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at center, rgba(216,178,87,0.12), transparent 70%);
+    }
+    .satisfaction-num {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 5rem);
+      color: var(--gold-light);
+      line-height: 1;
+      position: relative;
+    }
+    .satisfaction-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.7rem;
+      position: relative;
+    }
+    .satisfaction-sub {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--ink-soft);
+      margin-top: 1.1rem;
+      position: relative;
+    }
+
     /* ── CONTACT ── */
     .contact-wrap {
       min-height: 100vh;
@@ -693,6 +846,7 @@
     @media (max-width: 900px) {
       .about-grid { grid-template-columns: 1fr; }
       .founders-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .contact-card { padding: 2.2rem; }
     }
@@ -711,7 +865,7 @@
         overflow: hidden;
         transition: max-height 0.4s ease;
       }
-      .nav-links.open { max-height: 320px; }
+      .nav-links.open { max-height: 400px; }
       .nav-links li { width: 100%; border-top: 1px solid var(--border-soft); }
       .nav-links li:first-child { border-top: none; }
       .nav-links a { display: block; padding: 1.1rem 6vw; font-size: 0.78rem; }
@@ -732,6 +886,7 @@
   </button>
   <ul class="nav-links" id="navLinks">
     <li><a onclick="showPage('home')">Home</a></li>
+    <li><a onclick="showPage('services')">Services</a></li>
     <li><a onclick="showPage('about')">About</a></li>
     <li><a onclick="showPage('founders')">Founders</a></li>
     <li><a onclick="showPage('contact')">Contact</a></li>
@@ -748,7 +903,7 @@
     <h1 class="hero-title">Bold Ideas.<br><span class="gold">Digital</span><br>Reality.</h1>
     <p class="hero-tagline">We build transformative digital experiences that elevate brands and connect people to what matters.</p>
     <div class="hero-cta">
-      <button class="btn-gold" onclick="showPage('about')"><span>Discover Us</span></button>
+      <button class="btn-gold" onclick="showPage('services')"><span>Our Services</span></button>
       <button class="btn-ghost" onclick="showPage('contact')">Get In Touch</button>
     </div>
   </section>
@@ -781,6 +936,91 @@
     </div>
   </section>
 
+  <footer></footer>
+</div>
+
+<!-- ══════════ SERVICES ══════════ -->
+<div id="page-services" class="page">
+  <div class="services-wrap">
+    <p class="section-label reveal">What We Do</p>
+    <h2 class="section-title reveal" style="margin-bottom:1.2rem;">Our <em>Services</em></h2>
+    <div class="gold-line reveal" style="margin:0 0 1.5rem;"></div>
+    <p class="services-intro reveal">No templates. No one-size-fits-all. Every project is built around your brand, your goals, and your budget — designed to turn attention into customers. Start with a free quote, no commitment.</p>
+
+    <div class="services-grid">
+      <!-- WEB DESIGN -->
+      <div class="service-card reveal">
+        <div class="service-top">
+          <span class="service-num">01</span>
+        </div>
+        <h3 class="service-name">Web Design &amp; Development</h3>
+        <p class="service-desc">Custom-built websites designed around your brand and goals — never a template. From sleek single-page launches to full multi-page experiences, we craft sites that command attention and turn visitors into customers.</p>
+        <ul class="service-features">
+          <li>Fully custom design</li>
+          <li>Mobile-responsive build</li>
+          <li>Engineered to convert</li>
+          <li>SEO-ready foundation</li>
+        </ul>
+        <button class="btn-gold service-cta" onclick="showPage('contact')"><span>Book a Free Quote</span></button>
+      </div>
+
+      <!-- GOOGLE BUSINESS PROFILE — FREE -->
+      <div class="service-card service-card--featured reveal">
+        <div class="service-top">
+          <span class="service-num">02</span>
+          <span class="service-badge">Free</span>
+        </div>
+        <h3 class="service-name">Google Business Profile Setup</h3>
+        <p class="service-desc">Get found the moment customers search. We set up and optimize your Google Business Profile so you show up across Google Search and Maps — driving the calls, directions, and reviews that bring local customers through your door.</p>
+        <ul class="service-features">
+          <li>Complete profile setup</li>
+          <li>Search &amp; Maps visibility</li>
+          <li>Review-building strategy</li>
+          <li>Zero cost to get started</li>
+        </ul>
+        <button class="btn-gold service-cta" onclick="showPage('contact')"><span>Claim Yours Free</span></button>
+      </div>
+
+      <!-- META ADS -->
+      <div class="service-card reveal">
+        <div class="service-top">
+          <span class="service-num">03</span>
+        </div>
+        <h3 class="service-name">Meta Ads Management</h3>
+        <p class="service-desc">Facebook and Instagram campaigns engineered to put your business in front of the right people. We build, launch, and optimize every campaign with real data — so you spend less time guessing and more time growing.</p>
+        <ul class="service-features">
+          <li>Facebook &amp; Instagram ads</li>
+          <li>Precision audience targeting</li>
+          <li>Ad creative &amp; copy</li>
+          <li>Ongoing optimization</li>
+        </ul>
+        <button class="btn-gold service-cta" onclick="showPage('contact')"><span>Book a Free Quote</span></button>
+      </div>
+
+      <!-- VIDEOGRAPHY / PHOTO — COMING SOON -->
+      <div class="service-card service-card--soon reveal">
+        <div class="service-top">
+          <span class="service-num">04</span>
+          <span class="service-badge service-badge--soon">Coming Soon</span>
+        </div>
+        <h3 class="service-name">Videography &amp; Photography</h3>
+        <p class="service-desc">Scroll-stopping photo and video content that makes your brand impossible to ignore — built to fuel your website, ads, and social presence. Launching soon.</p>
+        <ul class="service-features">
+          <li>Brand photography</li>
+          <li>Short-form video</li>
+          <li>Content for ads &amp; social</li>
+        </ul>
+        <button class="btn-ghost service-cta" onclick="showPage('contact')">Get Notified</button>
+      </div>
+    </div>
+
+    <!-- SATISFACTION GUARANTEE -->
+    <div class="satisfaction-band reveal">
+      <div class="satisfaction-num">100%</div>
+      <div class="satisfaction-label">Customer Satisfaction</div>
+      <p class="satisfaction-sub">We're not done until you're proud to share it.</p>
+    </div>
+  </div>
   <footer></footer>
 </div>
 
@@ -874,6 +1114,13 @@
           <div>
             <div class="contact-detail-label">General Inquiries</div>
             <div class="contact-detail-value"><a href="mailto:AkoroDigital@gmail.com">AkoroDigital@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">☎</div>
+          <div>
+            <div class="contact-detail-label">Call or Text</div>
+            <div class="contact-detail-value"><a href="tel:+18458599182">(845) 859-9182</a></div>
           </div>
         </div>
         <div class="contact-item">
