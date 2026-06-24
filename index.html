@@ -6,8 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Akoro Digital | Web Design &amp; Digital Marketing in New York</title>
 <meta name="description" content="Akoro Digital is a New York digital agency crafting bold websites, branding, and data-driven marketing that build momentum and grow your business.">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Josefin+Sans:wght@100;300;400;500;600&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Josefin+Sans:wght@100;300;400;500;600&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Josefin+Sans:wght@100;300;400;500;600&display=swap"></noscript>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
   <style>
     :root {
       /* Dark midnight luxury palette */
@@ -1242,7 +1247,9 @@
 </div>
 
 <script>
-  emailjs.init('dzpGHH2-EoOhzRGZh');
+  window.addEventListener('DOMContentLoaded', function () {
+    if (window.emailjs) emailjs.init('dzpGHH2-EoOhzRGZh');
+  });
 
   /* Shared footer with social + Google links, injected into every page */
   var FOOTER_HTML = `
