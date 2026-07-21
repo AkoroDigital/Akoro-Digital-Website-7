@@ -80,9 +80,7 @@
 <div data-mobile-menu="" id="mobileMenu" style="position:fixed; inset:0; z-index:60; background:var(--bg); flex-direction:column; align-items:center; justify-content:center; gap:36px; display:none;">
   <button id="mobileClose" aria-label="Close" style="position:absolute; top:22px; right:28px; background:none; border:none; font-size:28px; color:var(--ink); cursor:pointer;">×</button>
   <span class="navlink" data-page="home" style="font-family:'Cormorant Garamond',serif; font-size:32px; cursor:pointer;">Home</span>
-  <span class="navlink" data-page="services" style="font-family:'Cormorant Garamond',serif; font-size:32px; cursor:pointer;">Services</span>
-  <span class="navlink" data-page="about" style="font-family:'Cormorant Garamond',serif; font-size:32px; cursor:pointer;">About</span>
-  <span class="navlink" data-page="contact" style="font-family:'Cormorant Garamond',serif; font-size:32px; cursor:pointer;">Contact</span>
+  <span class="navlink-btn" data-page="services" style="cursor:pointer; padding:15px 30px; border:1px solid var(--ink); font-size:15px; letter-spacing:0.3px; border-radius:2px;">View Services</span>  <span class="navlink" data-page="contact" style="font-family:'Cormorant Garamond',serif; font-size:32px; cursor:pointer;">Contact</span>
 </div>
 
 <main>
@@ -362,9 +360,9 @@
   function openMobile() { document.getElementById('mobileMenu').style.display = 'flex'; }
   function closeMobile() { document.getElementById('mobileMenu').style.display = 'none'; }
 
-  document.querySelectorAll('.navlink').forEach(function(el) {
-    el.addEventListener('click', function() { setPage(el.getAttribute('data-page')); });
-  });
+  document.querySelectorAll('.navlink, .navlink-btn').forEach(function(el) {
+  el.addEventListener('click', function() { setPage(el.getAttribute('data-page')); });
+});
   document.querySelectorAll('.cta-go').forEach(function(el) {
     el.addEventListener('click', function() { setPage('contact'); });
   });
