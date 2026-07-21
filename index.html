@@ -1,1406 +1,393 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="9E6nZ2rD_Ke80vM1aySVE3U9ucw9jlErN-QAbOmZKfA" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Akoro Digital | Web Design &amp; Digital Marketing in New York</title>
-<meta name="description" content="Akoro Digital is a New York digital agency crafting bold websites, branding, and data-driven marketing that build momentum and grow your business.">
- <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="font" type="font/woff2"
-    href="https://fonts.gstatic.com/s/cormorantgaramond/v21/co3bmX5slCNuHLi8bLeY9MK7whWMhyjornFLsS6V7w.woff2"
-    crossorigin>
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Josefin+Sans:wght@100;300;400;500;600&display=swap"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Josefin+Sans:wght@100;300;400;500;600&display=swap"></noscript>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
-  <style>
-    :root {
-      /* Dark midnight luxury palette */
-      --bg: #07070f;
-      --bg-soft: #0d0d17;
-      --surface: #12121d;
-      --surface-2: #1a1a28;
-      --border: #2c2820;
-      --border-soft: #201d18;
-
-      --ink: #f5efe2;          /* light cream text */
-      --ink-soft: #a89f8c;     /* muted light text */
-
-      --gold: #d8b257;         /* bright bronze-gold, legible on dark */
-      --gold-mid: #c8a043;
-      --gold-light: #ecd28a;
-      --gold-dim: #b08a3a;
-
-      --navy: #5e77bf;         /* lifted brand blue accent */
-      --navy-soft: #41548a;
-
-      --font-display: 'Cormorant Garamond', serif;
-      --font-body: 'Josefin Sans', sans-serif;
---logo: url("data:image/webp;base64,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");          }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--font-body);
-      font-weight: 300;
-      letter-spacing: 0.04em;
-      overflow-x: hidden;
-    }
-
-    /* subtle paper grain */
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.5;
-      mix-blend-mode: multiply;
-    }
-
-    nav {
-      position: fixed; top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 1.2rem 5vw;
-      background: linear-gradient(to bottom, rgba(7,7,15,0.96), rgba(7,7,15,0.82) 70%, rgba(7,7,15,0));
-      backdrop-filter: blur(8px);
-    }
-
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      color: var(--gold);
-      text-decoration: none;
-      cursor: pointer;
-      display: flex; align-items: center;
-    }
-
-    .nav-links {
-      display: flex; gap: 2.5rem; list-style: none;
-    }
-    .nav-links a {
-      color: var(--ink-soft);
-      text-decoration: none;
-      font-size: 0.72rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      transition: color 0.3s;
-      cursor: pointer;
-    }
-    .nav-links a:hover { color: var(--gold); }
-
-    /* Hamburger */
-    .nav-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      gap: 5px;
-      width: 42px; height: 42px;
-      background: transparent;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      cursor: pointer;
-      padding: 0 10px;
-    }
-    .nav-toggle span {
-      display: block;
-      height: 1.5px;
-      width: 100%;
-      background: var(--ink);
-      transition: transform 0.3s, opacity 0.3s;
-    }
-    .nav-toggle.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-    .nav-toggle.open span:nth-child(2) { opacity: 0; }
-    .nav-toggle.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
-
-    .page { display: none; }
-    .page.active { display: block; }
-
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      padding: 7rem 5vw 4rem;
-      background: #07070f;
-      /* spotlight position — defaults to center, updated by cursor */
-      --hero-mx: 50%;
-      --hero-my: 45%;
-    }
-
-    .hero-grid {
-      position: absolute; inset: 0;
-      background-image:
-        linear-gradient(rgba(216,178,87,0.10) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(216,178,87,0.10) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mask-image: radial-gradient(ellipse 80% 80% at 50% 45%, black 25%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 45%, black 25%, transparent 100%);
-    }
-
-    /* brighter copy of the grid, revealed only in a circle around the cursor */
-    .hero-grid--lit {
-      background-image:
-        linear-gradient(rgba(216,178,87,0.42) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(216,178,87,0.42) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mask-image: radial-gradient(circle 260px at var(--hero-mx) var(--hero-my), #000 0%, transparent 72%);
-      -webkit-mask-image: radial-gradient(circle 260px at var(--hero-mx) var(--hero-my), #000 0%, transparent 72%);
-    }
-
-    .hero-glow {
-      position: absolute;
-      width: 700px; height: 700px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,214,160,0.22) 0%, rgba(216,178,87,0.08) 42%, transparent 70%);
-      top: var(--hero-my); left: var(--hero-mx);
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      transition: opacity 0.4s ease;
-    }
-
-    .hero-eyebrow {
-      font-size: 0.68rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 1s 0.3s forwards;
-      position: relative;
-    }
-
-    .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(3.5rem, 10vw, 8.5rem);
-      font-weight: 400;
-      line-height: 0.95;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.5rem;
-      opacity: 0;
-      animation: fadeUp 1s 0.5s forwards;
-      position: relative;
-      color: #f5efe2;
-    }
-    .hero-title .gold { color: var(--gold-light); font-style: italic; }
-
-    .hero-tagline {
-      font-size: 0.78rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: rgba(245,239,226,0.62);
-      max-width: 480px;
-      line-height: 2;
-      opacity: 0;
-      animation: fadeUp 1s 0.7s forwards;
-      margin-bottom: 3rem;
-      position: relative;
-    }
-
-    .hero-cta {
-      display: flex; gap: 1.2rem;
-      opacity: 0;
-      animation: fadeUp 1s 0.9s forwards;
-      flex-wrap: wrap; justify-content: center;
-      position: relative;
-    }
-
-    .btn-gold {
-      padding: 0.85rem 2.4rem;
-      background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: color 0.35s;
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-gold::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: var(--gold);
-      transform: translateY(100%);
-      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
-    }
-    .btn-gold:hover::before { transform: translateY(0); }
-    .btn-gold:hover { color: #1a1206; }
-    .btn-gold span { position: relative; z-index: 1; }
-
-    .btn-ghost {
-      padding: 0.85rem 2.4rem;
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--ink-soft);
-      font-family: var(--font-body);
-      font-size: 0.72rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.35s;
-    }
-    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-
-    /* ghost button readable on the dark hero */
-    #hero .btn-ghost { border-color: rgba(245,239,226,0.28); color: rgba(245,239,226,0.85); }
-    #hero .btn-ghost:hover { border-color: var(--gold-light); color: var(--gold-light); }
-
-    .gold-line {
-      width: 60px; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
-      margin: 0 auto 1rem;
-    }
-
-    .section-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.8rem;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      font-weight: 400;
-      line-height: 1.05;
-      margin-bottom: 3rem;
-      color: var(--ink);
-    }
-    .section-title em { color: var(--gold); font-style: italic; }
-
-    /* ── REVIEWS (home) ── */
-    .reviews-wrap {
-      padding: 5rem 5vw 6rem;
-      max-width: 1100px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .reviews-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      max-width: 720px;
-      margin: 2rem auto 0;
-    }
-    .review-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 2.8rem 2.4rem 2.4rem;
-      position: relative;
-      text-align: left;
-      box-shadow: 0 18px 40px -28px rgba(0,0,0,0.6);
-      transition: transform 0.4s, box-shadow 0.4s;
-    }
-    .review-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 26px 50px -28px rgba(0,0,0,0.7);
-    }
-    .review-card::before {
-      content: '\201C';
-      position: absolute;
-      top: 0.2rem; left: 1.4rem;
-      font-family: var(--font-display);
-      font-size: 5rem;
-      line-height: 1;
-      color: var(--gold-light);
-      opacity: 0.5;
-    }
-    .review-stars {
-      color: var(--gold-mid);
-      letter-spacing: 0.25em;
-      font-size: 1rem;
-      margin-bottom: 1.2rem;
-    }
-    .review-text {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      line-height: 1.55;
-      color: var(--ink);
-      font-weight: 400;
-      margin-bottom: 1.6rem;
-    }
-    .review-author {
-      display: flex; align-items: center; gap: 0.9rem;
-    }
-    .review-avatar {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--navy), var(--navy-soft));
-      color: #f4efe2;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-    .review-name a {
-      color: var(--gold);
-      text-decoration: none;
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s, color 0.3s;
-    }
-    .review-name a:hover { color: var(--gold); border-color: var(--gold); }
-    .review-source {
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-top: 0.25rem;
-    }
-    .reviews-cta {
-      margin-top: 2.6rem;
-      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-    }
-
-    /* ── ABOUT ── */
-    .about-wrap { min-height: 100vh; padding: 9rem 5vw 6rem; }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5vw;
-      align-items: start;
-      margin-top: 3rem;
-    }
-
-    .logo-block {
-      display: flex; align-items: center; justify-content: center;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      position: relative;
-      overflow: hidden;
-      min-height: 340px;
-      padding: 2.5rem;
-      box-shadow: 0 18px 40px -30px rgba(0,0,0,0.6);
-    }
-    .logo-block::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(circle at center, rgba(216,178,87,0.12) 0%, transparent 70%);
-    }
-    .logo-block img {
-      width: 100%; height: 100%;
-      object-fit: contain;
-      position: relative; z-index: 1;
-    }
-
-    .about-text p {
-      font-size: 0.9rem;
-      line-height: 2;
-      color: var(--ink-soft);
-      margin-bottom: 1.5rem;
-    }
-    .about-text p strong { color: var(--ink); font-weight: 500; }
-
-    .stats-row {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--border);
-      margin-top: 3rem;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      overflow: hidden;
-    }
-    .stat-item {
-      background: var(--surface);
-      padding: 2rem 1.5rem;
-      text-align: center;
-    }
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: 2.8rem;
-      font-weight: 400;
-      color: var(--gold);
-      display: block;
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-top: 0.5rem;
-      display: block;
-    }
-
-    /* ── FOUNDERS ── */
-    .founders-wrap { min-height: 100vh; padding: 9rem 5vw 6rem; }
-
-    .founders-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 4rem;
-    }
-
-    .founder-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 2.5rem 2rem;
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.4s, transform 0.4s, box-shadow 0.4s;
-      box-shadow: 0 14px 34px -30px rgba(0,0,0,0.6);
-    }
-    .founder-card::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
-      transform: scaleX(0);
-      transition: transform 0.4s;
-    }
-    .founder-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); box-shadow: 0 24px 44px -30px rgba(0,0,0,0.7); }
-    .founder-card:hover::after { transform: scaleX(1); }
-
-    .founder-avatar {
-      width: 80px; height: 80px;
-      border-radius: 50%;
-      background: var(--surface-2);
-      border: 1px solid var(--gold-dim);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1.5rem;
-    }
-    .founder-initials {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 400;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .founder-name {
-      font-family: var(--font-display);
-      font-size: 1.6rem;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 0.3rem;
-    }
-    .founder-role {
-      font-size: 0.62rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-    }
-    .founder-bio {
-      font-size: 0.82rem;
-      line-height: 1.9;
-      color: var(--ink-soft);
-      margin-bottom: 2rem;
-    }
-    .founder-divider {
-      width: 30px; height: 1px;
-      background: var(--gold-dim);
-      margin-bottom: 1.5rem;
-    }
-    .founder-contact { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
-    .founder-contact li {
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      color: var(--ink-soft);
-      display: flex; align-items: center; gap: 0.6rem;
-    }
-    .founder-contact li span { color: var(--gold-dim); font-size: 0.65rem; }
-    .founder-contact a { color: var(--gold); text-decoration: none; transition: color 0.3s; }
-    .founder-contact a:hover { color: var(--gold-light); }
-
-    .team-photo-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.4s, transform 0.4s, box-shadow 0.4s;
-      display: flex; flex-direction: column;
-      box-shadow: 0 14px 34px -30px rgba(0,0,0,0.6);
-    }
-    .team-photo-card::before, .team-photo-card::after {
-      content: '';
-      position: absolute; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
-      z-index: 2;
-    }
-    .team-photo-card::before { top: 0; }
-    .team-photo-card::after { bottom: 0; }
-    .team-photo-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); box-shadow: 0 24px 44px -30px rgba(0,0,0,0.7); }
-    .team-photo-card img {
-      width: 100%; height: 100%;
-      object-fit: cover; display: block;
-      min-height: 400px;
-      filter: grayscale(12%) contrast(1.03);
-      transition: filter 0.5s;
-    }
-    .team-photo-card:hover img { filter: grayscale(0%) contrast(1.06); }
-    .team-photo-caption {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      padding: 1.2rem 1.5rem;
-      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
-      font-size: 0.62rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      text-align: center;
-    }
-
-    /* ── SERVICES ── */
-    .services-wrap { min-height: 100vh; padding: 9rem 5vw 6rem; }
-    .services-intro {
-      font-size: 0.9rem;
-      line-height: 2;
-      color: var(--ink-soft);
-      max-width: 640px;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-      margin-top: 3.5rem;
-    }
-    .service-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 2.8rem 2.4rem;
-      position: relative;
-      overflow: hidden;
-      display: flex; flex-direction: column;
-      transition: border-color 0.4s, transform 0.4s, box-shadow 0.4s;
-      box-shadow: 0 14px 34px -30px rgba(0,0,0,0.6);
-    }
-    .service-card::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
-      transform: scaleX(0);
-      transition: transform 0.4s;
-    }
-    .service-card:hover { border-color: var(--gold-dim); transform: translateY(-4px); box-shadow: 0 24px 44px -30px rgba(0,0,0,0.7); }
-    .service-card:hover::after { transform: scaleX(1); }
-
-    .service-card--featured { border-color: var(--gold-dim); }
-    .service-card--featured::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(circle at top right, rgba(216,178,87,0.12), transparent 60%);
-      pointer-events: none;
-    }
-    .service-card--soon { opacity: 0.74; }
-
-    .service-top {
-      display: flex; align-items: center; justify-content: space-between;
-      margin-bottom: 1.3rem;
-      min-height: 26px;
-      position: relative; z-index: 1;
-    }
-    .service-num {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      color: var(--gold);
-      letter-spacing: 0.12em;
-    }
-    .service-badge {
-      font-size: 0.55rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: #1a1206;
-      background: var(--gold);
-      padding: 0.35rem 0.75rem;
-      border-radius: 999px;
-      font-weight: 500;
-    }
-    .service-badge--soon {
-      color: var(--gold);
-      background: transparent;
-      border: 1px solid var(--gold-dim);
-    }
-    .service-name {
-      font-family: var(--font-display);
-      font-size: 1.85rem;
-      font-weight: 500;
-      color: var(--ink);
-      line-height: 1.12;
-      margin-bottom: 1rem;
-      position: relative; z-index: 1;
-    }
-    .service-desc {
-      font-size: 0.84rem;
-      line-height: 1.95;
-      color: var(--ink-soft);
-      margin-bottom: 1.6rem;
-      position: relative; z-index: 1;
-    }
-    .service-features {
-      list-style: none;
-      display: flex; flex-direction: column; gap: 0.65rem;
-      margin-bottom: 2.2rem;
-      position: relative; z-index: 1;
-    }
-    .service-features li {
-      font-size: 0.74rem;
-      letter-spacing: 0.06em;
-      color: var(--ink);
-      display: flex; align-items: center; gap: 0.7rem;
-    }
-    .service-features li::before {
-      content: '';
-      width: 5px; height: 5px;
-      background: var(--gold);
-      transform: rotate(45deg);
-      flex-shrink: 0;
-    }
-    .service-cta {
-      margin-top: auto;
-      align-self: flex-start;
-      position: relative; z-index: 1;
-    }
-
-    /* satisfaction band */
-    .satisfaction-band {
-  margin-top: 3.5rem;
-  border: 1px solid var(--gold-dim);
-  border-radius: 6px;
-  background: linear-gradient(135deg, var(--surface), var(--surface-2));
-  padding: 3.2rem 2.5rem;
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.satisfaction-num,
-.satisfaction-label,
-.satisfaction-sub {
-  width: 100%;
-  text-align: center;
-}
-    .satisfaction-band::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(circle at center, rgba(216,178,87,0.12), transparent 70%);
-    }
-    .satisfaction-num {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 8vw, 5rem);
-      color: var(--gold-light);
-      line-height: 1;
-      position: relative;
-    }
-    .satisfaction-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-top: 0.7rem;
-      position: relative;
-    }
-    .satisfaction-sub {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-style: italic;
-      color: var(--ink-soft);
-      margin-top: 1.1rem;
-      position: relative;
-    }
-
-    /* ── CONTACT ── */
-    .contact-wrap {
-      min-height: 100vh;
-      padding: 9rem 5vw 6rem;
-      display: flex; flex-direction: column; align-items: center;
-    }
-    .contact-inner { width: 100%; max-width: 700px; }
-    .contact-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 4rem;
-      position: relative;
-      margin-top: 3rem;
-      box-shadow: 0 18px 40px -30px rgba(0,0,0,0.6);
-    }
-    .contact-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
-    }
-    .contact-item {
-      display: flex; align-items: flex-start; gap: 1.5rem;
-      margin-bottom: 2.5rem; padding-bottom: 2.5rem;
-      border-bottom: 1px solid var(--border-soft);
-    }
-    .contact-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-    .contact-icon {
-      width: 44px; height: 44px; flex-shrink: 0;
-      border: 1px solid var(--gold-dim); border-radius: 4px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.9rem; color: var(--gold);
-    }
-    .contact-detail-label {
-      font-size: 0.6rem; letter-spacing: 0.3em;
-      text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem;
-    }
-    .contact-detail-value {
-      font-family: var(--font-display); font-size: 1.2rem;
-      color: var(--ink); font-weight: 400;
-    }
-    .contact-detail-value a { color: var(--ink); text-decoration: none; transition: color 0.3s; }
-    .contact-detail-value a:hover { color: var(--gold); }
-
-    .contact-form { margin-top: 1rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
-    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-    .form-label {
-      font-size: 0.6rem; letter-spacing: 0.25em;
-      text-transform: uppercase; color: var(--gold);
-    }
-    .form-input, .form-textarea {
-      background: var(--surface-2);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      color: var(--ink);
-      font-family: var(--font-body);
-      font-size: 0.82rem;
-      padding: 0.85rem 1rem;
-      letter-spacing: 0.05em;
-      outline: none;
-      transition: border-color 0.3s, background 0.3s;
-      width: 100%;
-    }
-    .form-input::placeholder, .form-textarea::placeholder { color: #6f6757; }
-    .form-input:focus, .form-textarea:focus { border-color: var(--gold-dim); background: #20202e; }
-    .form-textarea { min-height: 120px; resize: vertical; }
-    .form-group-full { margin-bottom: 1rem; }
-
-    .form-submit {
-      margin-top: 1.5rem; width: 100%; padding: 1rem;
-      background: transparent;
-      border: 1px solid var(--gold);
-      border-radius: 4px;
-      color: var(--gold);
-      font-family: var(--font-body);
-      font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
-      cursor: pointer; transition: color 0.35s;
-      position: relative; overflow: hidden;
-    }
-    .form-submit::before {
-      content: ''; position: absolute; inset: 0;
-      background: var(--gold);
-      transform: translateY(100%);
-      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
-    }
-    .form-submit:hover::before { transform: translateY(0); }
-    .form-submit:hover { color: #1a1206; }
-    .form-submit span { position: relative; z-index: 1; }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2.5rem 5vw;
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 1.4rem;
-      background: var(--bg-soft);
-    }
-    .footer-left { display: flex; flex-direction: column; gap: 0.6rem; }
-    .footer-logo {
-      font-family: var(--font-display);
-      font-size: 1.1rem; color: var(--gold);
-      letter-spacing: 0.15em;
-    }
-    .footer-copy { font-size: 0.62rem; letter-spacing: 0.15em; color: var(--ink-soft); }
-    .footer-copy a { color: var(--gold-dim); text-decoration: none; transition: color 0.3s; }
-    .footer-copy a:hover { color: var(--gold); }
-
-    .footer-social { display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap; }
-    .social-link {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      padding: 0.55rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--ink-soft);
-      text-decoration: none;
-      font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
-      transition: all 0.3s;
-      background: var(--surface);
-    }
-    .social-link svg { width: 15px; height: 15px; fill: currentColor; }
-    .social-link:hover { color: var(--gold); border-color: var(--gold-dim); transform: translateY(-2px); }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s, transform 0.7s; }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    @media (max-width: 900px) {
-      .about-grid { grid-template-columns: 1fr; }
-      .founders-grid { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .contact-card { padding: 2.2rem; }
-    }
-
-    @media (max-width: 640px) {
-      .nav-toggle { display: flex; }
-      .nav-links {
-        position: absolute;
-        top: 100%; left: 0; right: 0;
-        flex-direction: column;
-        gap: 0;
-        background: var(--surface);
-        border-bottom: 1px solid var(--border);
-        box-shadow: 0 20px 40px -24px rgba(0,0,0,0.6);
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease;
-      }
-      .nav-links.open { max-height: 400px; }
-      .nav-links li { width: 100%; border-top: 1px solid var(--border-soft); }
-      .nav-links li:first-child { border-top: none; }
-      .nav-links a { display: block; padding: 1.1rem 6vw; font-size: 0.78rem; }
-      .stats-row { grid-template-columns: 1fr; }
-      footer { flex-direction: column; align-items: flex-start; }
-      .review-text { font-size: 1.15rem; }
-    }
-  </style>
-
-  <!-- Structured data: helps Google & AI understand the business -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": "https://www.akorodigital.com/#business",
-    "name": "Akoro Digital",
-    "description": "Akoro Digital is a New York digital agency crafting custom websites, branding, and data-driven marketing that grow your business.",
-    "url": "https://www.akorodigital.com",
-    "logo": "https://www.akorodigital.com/akoro-logo.png",
-    "image": "https://www.akorodigital.com/akoro-logo.png",
-    "email": "AkoroDigital@gmail.com",
-    "telephone": "+1-845-859-9182",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "New York",
-      "addressRegion": "NY",
-      "addressCountry": "US"
-    },
-    "areaServed": {
-      "@type": "State",
-      "name": "New York"
-    },
-    "founder": [
-      {
-        "@type": "Person",
-        "name": "Marcos Patino",
-        "jobTitle": "Founder & CEO",
-        "sameAs": "https://www.linkedin.com/in/marcos-patino-b5027b34b/"
-      },
-      {
-        "@type": "Person",
-        "name": "Nathan Huen",
-        "jobTitle": "Co-Founder & COO",
-        "sameAs": "https://www.linkedin.com/in/nathan-huen-213916400/"
-      }
-    ],
-    "sameAs": [
-      "https://www.instagram.com/akoro.digital"
-    ],
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Services",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Web Design & Development",
-            "description": "Custom-built, mobile-responsive websites designed to convert."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Google Business Profile Setup",
-            "description": "Free Google Business Profile setup and optimization for visibility on Google Search and Maps."
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Meta Ads Management",
-            "description": "Facebook and Instagram ad campaign management, targeting, and optimization."
-          }
-        }
-      ]
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Akoro Digital — Photography &amp; Videography, New York</title>
+<meta name="description" content="Akoro Digital is a New York photography and videography company for businesses and personal brands — product, storefront, headshot, and promotional video.">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Akoro Digital",
+  "image": "",
+  "description": "Photography and videography for businesses and personal brands in New York, NY. Product, storefront, team, and headshot photography, and promotional video.",
+  "founder": [{ "@type": "Person", "name": "Marcos Patino", "jobTitle": "Founder" }],
+  "areaServed": "New York, NY",
+  "email": "AkoroDigital@gmail.com",
+  "telephone": "+1-845-859-9182",
+  "sameAs": ["https://instagram.com/akoro.digital", "https://www.linkedin.com/in/marcos-patino-b5027b34b/"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Photography & Video" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Personal Brand Photography" } }
+    ]
   }
-  </script>
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  a { color: #b3742f; text-decoration: none; }
+  a:hover { color: #4d3a2a; }
+  ::selection { background: #ecd9b8; }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+  [data-mobile-menu][data-open="true"] { display: flex !important; }
+  [data-nav-desktop] { display: flex; }
+  [data-nav-toggle] { display: none; }
+  @media (max-width: 860px) {
+    [data-nav-desktop] { display: none; }
+    [data-nav-toggle] { display: flex; }
+  }
+  @media (max-width: 700px) {
+    [data-hero-h1] { font-size: 42px !important; }
+    [data-two-col] { grid-template-columns: 1fr !important; }
+    [data-three-col] { grid-template-columns: 1fr !important; }
+    [data-gallery-grid] { grid-template-columns: repeat(2,1fr) !important; }
+  }
+  body {
+    --bg:#fdfaf5; --card:#ffffff; --ink:#3c332c; --ink-soft:#7a6f63; --line:#e6ddcf; --gold:#d1af7a; --gold-deep:#b3742f;
+    font-family:'Work Sans',sans-serif; background:var(--bg); color:var(--ink); min-height:100vh; overflow-x:hidden;
+  }
+  .image-slot { display:flex; align-items:center; justify-content:center; background:#efe6d8; color:#a99a86; font-size:14px; letter-spacing:0.3px; border:1px solid var(--line); }
+  .image-slot.rounded { border-radius:4px; }
+</style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
- <a class="nav-logo" href="#home" onclick="showPage('home'); return false;" aria-label="Akoro Digital home"
-     style="width:118px;height:54px;background-image:var(--logo);background-size:contain;background-repeat:no-repeat;background-position:left center;"></a>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </button>
-  <ul class="nav-links" id="navLinks">
-   <li><a href="#home" onclick="showPage('home'); return false;">Home</a></li>
-    <li><a href="#services" onclick="showPage('services'); return false;">Services</a></li>
-    <li><a href="#about" onclick="showPage('about'); return false;">About</a></li>
-    <li><a href="#founders" onclick="showPage('founders'); return false;">Founders</a></li>
-    <li><a href="#contact" onclick="showPage('contact'); return false;">Contact</a></li>
-  </ul>
-</nav>
+<header style="position:fixed; top:0; left:0; right:0; z-index:50; background:rgba(253,250,245,0.9); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);">
+  <div style="max-width:1280px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:18px 32px;">
+    <div id="logo" style="font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:600; letter-spacing:0.3px; cursor:pointer; color:var(--ink);">Akoro Digital</div>
+    <nav data-nav-desktop="" style="align-items:center; gap:40px;">
+      <span class="navlink" data-page="home" style="cursor:pointer; font-size:15px; padding-bottom:4px;">Home</span>
+      <span class="navlink" data-page="services" style="cursor:pointer; font-size:15px; padding-bottom:4px;">Services</span>
+      <span class="navlink" data-page="about" style="cursor:pointer; font-size:15px; padding-bottom:4px;">About</span>
+      <span class="navlink" data-page="contact" style="cursor:pointer; font-size:15px; padding-bottom:4px;">Contact</span>
+      <span class="cta-go" style="cursor:pointer; font-size:14px; padding:11px 22px; border:1px solid var(--ink); border-radius:2px; letter-spacing:0.3px;">Book a Session</span>
+    </nav>
+    <button data-nav-toggle="" id="mobileToggle" aria-label="Menu" style="background:none; border:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px;">
+      <span style="display:block; width:24px; height:1px; background:var(--ink);"></span>
+      <span style="display:block; width:24px; height:1px; background:var(--ink);"></span>
+      <span style="display:block; width:16px; height:1px; background:var(--ink);"></span>
+    </button>
+  </div>
+</header>
 
-<!-- ══════════ HOME ══════════ -->
-<div id="page-home" class="page active">
-  <section id="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-grid hero-grid--lit"></div>
-    <div class="hero-glow" id="heroGlow"></div>
-    <p class="hero-eyebrow">Akoro Digital — Redefining the Digital Frontier</p>
-    <h1 class="hero-title">Bold Ideas.<br><span class="gold">Digital</span><br>Reality.</h1>
-    <p class="hero-tagline">We build transformative digital experiences that elevate brands and connect people to what matters.</p>
-    <div class="hero-cta">
-      <button class="btn-gold" onclick="showPage('services')"><span>Our Services</span></button>
-      <button class="btn-ghost" onclick="showPage('contact')">Get In Touch</button>
+<div data-mobile-menu="" id="mobileMenu" style="position:fixed; inset:0; z-index:60; background:var(--bg); flex-direction:column; align-items:center; justify-content:center; gap:36px; display:none;">
+  <button id="mobileClose" aria-label="Close" style="position:absolute; top:22px; right:28px; background:none; border:none; font-size:28px; color:var(--ink); cursor:pointer;">×</button>
+  <span class="navlink" data-page="home" style="font-family:'Cormorant Garamond',serif; font-size:32px; cursor:pointer;">Home</span>
+  <span class="navlink" data-page="services" style="font-family:'Cormorant Garamond',serif; font-size:32px; cursor:pointer;">Services</span>
+  <span class="navlink" data-page="about" style="font-family:'Cormorant Garamond',serif; font-size:32px; cursor:pointer;">About</span>
+  <span class="navlink" data-page="contact" style="font-family:'Cormorant Garamond',serif; font-size:32px; cursor:pointer;">Contact</span>
+</div>
+
+<main>
+  <!-- HOME -->
+  <section id="page-home" style="animation:fadeUp .5s ease both;">
+    <div style="max-width:1280px; margin:0 auto; padding:100px 32px 0;">
+      <div class="image-slot rounded" style="width:100%; height:260px;">Wide banner photo</div>
+    </div>
+    <div style="min-height:70vh; display:flex; align-items:center; padding:40px 32px 60px; animation:fadeUp .8s ease both;">
+      <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:center; width:100%;" data-two-col="">
+        <div>
+          <div style="font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-deep); margin-bottom:20px;">New York, NY — On Location</div>
+          <h1 data-hero-h1="" style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(40px,6vw,68px); line-height:1.08; margin:0 0 28px; color:var(--ink);">Photography and Videography for Businesses &amp; Personal Brands.</h1>
+          <p style="font-size:18px; line-height:1.7; color:var(--ink-soft); max-width:520px; margin:0 0 36px; font-weight:300;">I'm Marcos — I help local businesses and personal brands look as good in photos as they do in person. No stock images, no phone-camera shots. Just real photography and video, shot on location.</p>
+          <div style="display:flex; gap:18px; flex-wrap:wrap;">
+            <span class="cta-go" style="cursor:pointer; padding:15px 30px; background:var(--ink); color:var(--bg); border:1px solid var(--ink); font-size:15px; letter-spacing:0.3px; border-radius:2px;">Book a Session</span>
+            <span class="navlink" data-page="services" style="cursor:pointer; padding:15px 30px; border:1px solid var(--ink); font-size:15px; letter-spacing:0.3px; border-radius:2px;">View Services</span>
+          </div>
+        </div>
+        <div class="image-slot rounded" style="width:100%; height:520px;">Hero photo — business or personal brand session</div>
+      </div>
+    </div>
+    <div style="max-width:1280px; margin:0 auto; padding:60px 32px; display:grid; grid-template-columns:1fr 1fr; gap:24px;" data-two-col="">
+      <div class="image-slot rounded" style="width:100%; height:340px;">On-location session</div>
+      <div class="image-slot rounded" style="width:100%; height:340px;">Product / storefront photo</div>
+    </div>
+    <div style="max-width:1280px; margin:0 auto; padding:60px 32px 100px;">
+      <div style="text-align:center; margin-bottom:56px;">
+        <div style="font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-deep); margin-bottom:14px;">What I Offer</div>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:38px; margin:0;">Three ways to work together</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:28px; max-width:820px; margin:0 auto;" data-two-col="">
+        <div style="background:var(--card); border:1px solid var(--line); border-radius:4px; overflow:hidden;">
+          <div class="image-slot" style="width:100%; height:200px;">Service photo</div>
+          <div style="padding:28px 30px;">
+            <h3 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:24px; margin:0 0 14px;">Business Photography &amp; Video</h3>
+            <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); font-weight:300; margin:0 0 18px;">Product, storefront, team photography, and promotional video content for local businesses.</p>
+            <span class="navlink" data-page="services" style="font-size:14px; color:var(--gold-deep); cursor:pointer;">Learn more →</span>
+          </div>
+        </div>
+        <div style="background:var(--card); border:1px solid var(--line); border-radius:4px; overflow:hidden;">
+          <div class="image-slot" style="width:100%; height:200px;">Service photo</div>
+          <div style="padding:28px 30px;">
+            <h3 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:24px; margin:0 0 14px;">Personal Brand Photography</h3>
+            <p style="font-size:15px; line-height:1.65; color:var(--ink-soft); font-weight:300; margin:0 0 18px;">Headshots and content sessions for entrepreneurs, creators, and professionals.</p>
+            <span class="navlink" data-page="services" style="font-size:14px; color:var(--gold-deep); cursor:pointer;">Learn more →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:1280px; margin:0 auto; padding:0 32px 100px;">
+      <div style="text-align:center; margin-bottom:44px;">
+        <div style="font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-deep); margin-bottom:14px;">Portfolio</div>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:38px; margin:0;">Recent work</h2>
+      </div>
+      <div class="image-slot rounded" style="width:100%; height:360px; margin-bottom:20px;">Featured portfolio photo</div>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;" data-gallery-grid="">
+        <div class="image-slot rounded" style="width:100%; height:280px;">Portfolio image</div>
+        <div class="image-slot rounded" style="width:100%; height:280px;">Portfolio image</div>
+        <div class="image-slot rounded" style="width:100%; height:280px;">Portfolio image</div>
+        <div class="image-slot rounded" style="width:100%; height:280px;">Portfolio image</div>
+        <div class="image-slot rounded" style="width:100%; height:280px;">Portfolio image</div>
+        <div class="image-slot rounded" style="width:100%; height:280px;">Portfolio image</div>
+      </div>
+    </div>
+    <div style="background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:80px 32px;">
+      <div style="max-width:1100px; margin:0 auto;">
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:36px; margin-bottom:36px;" data-three-col="">
+          <div style="text-align:center;">
+            <div style="display:flex; justify-content:center; gap:4px; margin-bottom:18px; color:var(--gold);"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:19px; line-height:1.5; margin:0 0 18px; color:var(--ink);">"Marcos is a talented young man, I asked him to come by my party with his camera and his pictures did not disappoint..."</p>
+            <div style="font-size:14px; color:var(--ink-soft);">Ayden Lombardi · Google Review</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="display:flex; justify-content:center; gap:4px; margin-bottom:18px; color:var(--gold);"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:19px; line-height:1.5; margin:0 0 18px; color:var(--ink);">"This young man is a very hard working individual. When I booked him for my party I had no idea how good these pictures would turn out..."</p>
+            <div style="font-size:14px; color:var(--ink-soft);">Tyler Hall · Google Review</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="display:flex; justify-content:center; gap:4px; margin-bottom:18px; color:var(--gold);"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+            <p style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:19px; line-height:1.5; margin:0 0 18px; color:var(--ink);">"Very good service, easy to talk, and he helped me grow my business. He helped me get more clients which is good. If you're looking for someone to help you to grow your business this is the right person!"</p>
+            <div style="font-size:14px; color:var(--ink-soft);">Cristian Gallegos · Google Review</div>
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <a href="https://share.google/XRFYDhEQpNCxzt5Md" target="_blank" rel="noopener" style="font-size:14px;">Read more reviews on Google →</a>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:900px; margin:0 auto; padding:100px 32px; text-align:center;">
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:40px; margin:0 0 18px;">Let's create something worth sharing.</h2>
+      <p style="font-size:16px; color:var(--ink-soft); font-weight:300; margin:0 0 30px;">On-location photography and video that actually looks like you.</p>
+      <span class="cta-go" style="cursor:pointer; padding:15px 30px; background:var(--ink); color:var(--bg); border:1px solid var(--ink); font-size:15px; letter-spacing:0.3px; border-radius:2px;">Book a Session</span>
     </div>
   </section>
 
-  <!-- REVIEWS -->
-  <section class="reviews-wrap">
-    <p class="section-label reveal">What Clients Say</p>
-    <h2 class="section-title reveal" style="margin-bottom:0.5rem;">Reviews</h2>
-    <div class="gold-line reveal"></div>
-
-    <div class="reviews-grid">
-      <div class="review-card reveal">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Very good service, easy to talk, and he helped me grow my business. He helped me get more clients which is good. If you're looking for someone to help you to grow your business this is the right person!</p>
-        <div class="review-author">
-          <div class="review-avatar">CG</div>
-          <div>
-            <div class="review-name">
-              <a href="https://www.google.com/maps/contrib/100021548354192630778/reviews?authuser=4&hl=en" target="_blank" rel="noopener">Cristian Gallegos</a>
-            </div>
-            <div class="review-source">Google Review</div>
+  <!-- SERVICES -->
+  <section id="page-services" style="display:none; animation:fadeUp .5s ease both;">
+    <div style="max-width:1280px; margin:0 auto; padding:160px 32px 40px; text-align:center;">
+      <div style="font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-deep); margin-bottom:16px;">Services</div>
+      <h1 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(34px,5vw,52px); margin:0 auto 20px; max-width:760px;">Simple, focused, and built around what actually moves the needle.</h1>
+    </div>
+    <div style="max-width:1100px; margin:0 auto; padding:40px 32px 100px; display:flex; flex-direction:column; gap:70px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;" data-two-col="">
+        <div class="image-slot rounded" style="width:100%; height:380px; order:1;">Business photography &amp; video</div>
+        <div style="order:2;">
+          <h2 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:30px; margin:0 0 16px;">Business Photography &amp; Video</h2>
+          <p style="font-size:16px; line-height:1.7; color:var(--ink-soft); font-weight:300; margin:0 0 20px;">Product, storefront, team photography, and promotional video content built to help local businesses stand out online and on social.</p>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="font-size:14.5px; color:var(--ink); display:flex; gap:10px;"><span style="color:var(--gold-deep);">—</span>Product &amp; storefront photography</div>
+            <div style="font-size:14.5px; color:var(--ink); display:flex; gap:10px;"><span style="color:var(--gold-deep);">—</span>Team &amp; culture photography</div>
+            <div style="font-size:14.5px; color:var(--ink); display:flex; gap:10px;"><span style="color:var(--gold-deep);">—</span>Short promotional video content</div>
+            <div style="font-size:14.5px; color:var(--ink); display:flex; gap:10px;"><span style="color:var(--gold-deep);">—</span>Content ready for web &amp; social</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;" data-two-col="">
+        <div class="image-slot rounded" style="width:100%; height:380px; order:4;">Personal brand photography</div>
+        <div style="order:3;">
+          <h2 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:30px; margin:0 0 16px;">Personal Brand Photography</h2>
+          <p style="font-size:16px; line-height:1.7; color:var(--ink-soft); font-weight:300; margin:0 0 20px;">Headshots and content sessions for entrepreneurs, creators, and professionals who need to look as sharp online as they do in the room.</p>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            <div style="font-size:14.5px; color:var(--ink); display:flex; gap:10px;"><span style="color:var(--gold-deep);">—</span>Professional headshots</div>
+            <div style="font-size:14.5px; color:var(--ink); display:flex; gap:10px;"><span style="color:var(--gold-deep);">—</span>On-location content sessions</div>
+            <div style="font-size:14.5px; color:var(--ink); display:flex; gap:10px;"><span style="color:var(--gold-deep);">—</span>Personal brand &amp; social content</div>
+            <div style="font-size:14.5px; color:var(--ink); display:flex; gap:10px;"><span style="color:var(--gold-deep);">—</span>Flexible scheduling</div>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="reviews-cta reveal">
-      <a class="btn-gold" href="https://share.google/XRFYDhEQpNCxzt5Md" target="_blank" rel="noopener"><span>Read More Reviews</span></a>
-      <a class="btn-ghost" href="https://share.google/XRFYDhEQpNCxzt5Md" target="_blank" rel="noopener">Leave a Review</a>
+    <div style="background:var(--card); border-top:1px solid var(--line); padding:90px 32px;">
+      <div style="max-width:1000px; margin:0 auto;">
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:32px; text-align:center; margin:0 0 50px;">How it works</h2>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:40px;" data-three-col="">
+          <div style="text-align:center;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:44px; color:var(--gold); margin-bottom:10px;">01</div>
+            <h3 style="font-size:18px; margin:0 0 10px; font-weight:600;">Book</h3>
+            <p style="font-size:14.5px; color:var(--ink-soft); font-weight:300; line-height:1.6; margin:0;">Reach out and tell me a bit about your business or brand.</p>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:44px; color:var(--gold); margin-bottom:10px;">02</div>
+            <h3 style="font-size:18px; margin:0 0 10px; font-weight:600;">Shoot</h3>
+            <p style="font-size:14.5px; color:var(--ink-soft); font-weight:300; line-height:1.6; margin:0;">We shoot on location — no studio, no stock photos.</p>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:44px; color:var(--gold); margin-bottom:10px;">03</div>
+            <h3 style="font-size:18px; margin:0 0 10px; font-weight:600;">Deliver</h3>
+            <p style="font-size:14.5px; color:var(--ink-soft); font-weight:300; line-height:1.6; margin:0;">You get edited, ready-to-use photos and video, fast.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:900px; margin:0 auto; padding:100px 32px; text-align:center;">
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:36px; margin:0 0 26px;">Ready to book?</h2>
+      <span class="cta-go" style="cursor:pointer; padding:15px 30px; background:var(--ink); color:var(--bg); border:1px solid var(--ink); font-size:15px; letter-spacing:0.3px; border-radius:2px;">Book a Session</span>
     </div>
   </section>
 
-  <footer></footer>
-</div>
-
-<!-- ══════════ SERVICES ══════════ -->
-<div id="page-services" class="page">
-  <div class="services-wrap">
-    <p class="section-label reveal">What We Do</p>
-    <h2 class="section-title reveal" style="margin-bottom:1.2rem;">Our <em>Services</em></h2>
-    <div class="gold-line reveal" style="margin:0 0 1.5rem;"></div>
-    <p class="services-intro reveal">No templates. No one-size-fits-all. Every project is built around your brand, your goals, and your budget — designed to turn attention into customers. Start with a free quote, no commitment.</p>
-
-    <div class="services-grid">
-      <!-- WEB DESIGN -->
-      <div class="service-card reveal">
-        <div class="service-top">
-          <span class="service-num">01</span>
-        </div>
-        <h3 class="service-name">Web Design &amp; Development</h3>
-        <p class="service-desc">Custom-built websites designed around your brand and goals — never a template. From sleek single-page launches to full multi-page experiences, we craft sites that command attention and turn visitors into customers.</p>
-        <ul class="service-features">
-          <li>Fully custom design</li>
-          <li>Mobile-responsive build</li>
-          <li>Engineered to convert</li>
-          <li>SEO-ready foundation</li>
-        </ul>
-        <button class="btn-gold service-cta" onclick="showPage('contact')"><span>Book a Free Quote</span></button>
-      </div>
-
-      <!-- GOOGLE BUSINESS PROFILE — FREE -->
-      <div class="service-card service-card--featured reveal">
-        <div class="service-top">
-          <span class="service-num">02</span>
-          <span class="service-badge">Free</span>
-        </div>
-        <h3 class="service-name">Google Business Profile Setup</h3>
-        <p class="service-desc">Get found the moment customers search. We set up and optimize your Google Business Profile so you show up across Google Search and Maps — driving the calls, directions, and reviews that bring local customers through your door.</p>
-        <ul class="service-features">
-          <li>Complete profile setup</li>
-          <li>Search &amp; Maps visibility</li>
-          <li>Review-building strategy</li>
-          <li>Zero cost to get started</li>
-        </ul>
-        <button class="btn-gold service-cta" onclick="showPage('contact')"><span>Claim Yours Free</span></button>
-      </div>
-
-      <!-- META ADS -->
-      <div class="service-card reveal">
-        <div class="service-top">
-          <span class="service-num">03</span>
-        </div>
-        <h3 class="service-name">Meta Ads Management</h3>
-        <p class="service-desc">Facebook and Instagram campaigns engineered to put your business in front of the right people. We build, launch, and optimize every campaign with real data — so you spend less time guessing and more time growing.</p>
-        <ul class="service-features">
-          <li>Facebook &amp; Instagram ads</li>
-          <li>Precision audience targeting</li>
-          <li>Ad creative &amp; copy</li>
-          <li>Ongoing optimization</li>
-        </ul>
-        <button class="btn-gold service-cta" onclick="showPage('contact')"><span>Book a Free Quote</span></button>
-      </div>
-
- <!-- PHOTOGRAPHY -->
-<div class="service-card reveal">
-  <div class="service-top">
-    <span class="service-num">04</span>
-  </div>
-  <h3 class="service-name">Photography</h3>
-  <p class="service-desc">Real photos of your business, your team, and your brand — built to fuel your website, Google Business Profile, and social presence. No stock images, no phone-camera shots.</p>
-  <ul class="service-features">
-    <li>Business &amp; storefront photography</li>
-    <li>Personal brand sessions</li>
-    <li>Packages from $250</li>
-    <li>Hourly rates available</li>
-  </ul>
-  <button class="btn-gold service-cta" onclick="showPage('contact')"><span>Book a Free Quote</span></button>
-</div>
-</div>
-    <!-- SATISFACTION GUARANTEE -->
-    <div class="satisfaction-band reveal">
-      <div class="satisfaction-num">100%</div>
-      <div class="satisfaction-label">Customer Satisfaction</div>
-      <p class="satisfaction-sub">We're not done until you're proud to share it.</p>
-    </div>
-  </div>
-  <footer></footer>
-</div>
-
-<!-- ══════════ ABOUT ══════════ -->
-<div id="page-about" class="page">
-  <div class="about-wrap">
-    <p class="section-label reveal">Our Story</p>
-    <h2 class="section-title reveal">We Are <em>Akoro</em><br>Digital</h2>
-    <div class="gold-line reveal"></div>
-
-    <div class="about-grid">
-      <div class="logo-block reveal" style="background:var(--bg);" role="img" aria-label="Akoro Digital logo">
-        <div style="width:100%;height:100%;min-height:300px;background-image:var(--logo);background-size:contain;background-repeat:no-repeat;background-position:center;"></div>
-      </div>
-
-      <div class="about-text">
-        <p class="reveal"><strong>Akoro Digital</strong> is a forward-thinking digital agency founded by two visionaries who believe that the intersection of technology, creativity, and strategy is where great businesses are built.</p>
-        <p class="reveal">We partner with brands and entrepreneurs to craft compelling digital identities — from sleek web experiences and strategic content to data-driven marketing campaigns that convert. Our team brings together expertise across design, development, and growth strategy.</p>
-        <p class="reveal">At Akoro, we don't just build products — we build <strong>momentum</strong>. Every pixel, every line of code, every campaign is engineered with intention.</p>
-        <p class="reveal">Our name, <em style="color:var(--gold);font-style:italic;">Akoro</em>, embodies our mission: to be the cornerstone of your digital presence — strong, reliable, and enduring.</p>
-      </div>
-    </div>
-
-    <div class="stats-row reveal">
-      <div class="stat-item"><span class="stat-num">2</span><span class="stat-label">Founders</span></div>
-      <div class="stat-item"><span class="stat-num">∞</span><span class="stat-label">Ambition</span></div>
-      <div class="stat-item"><span class="stat-num">1</span><span class="stat-label">Vision</span></div>
-    </div>
-  </div>
-  <footer></footer>
-</div>
-
-<!-- ══════════ FOUNDERS ══════════ -->
-<div id="page-founders" class="page">
-  <div class="founders-wrap">
-    <p class="section-label reveal">The Team</p>
-    <h2 class="section-title reveal">Meet the <em>Founders</em></h2>
-    <div class="gold-line reveal"></div>
-
-    <div class="founders-grid">
-      <!-- MARCOS -->
-      <div class="founder-card reveal">
-        <div class="founder-avatar"><span class="founder-initials">MP</span></div>
-        <div class="founder-name">Marcos Patino</div>
-        <div class="founder-role">Founder &amp; CEO</div>
-        <p class="founder-bio">
-          Marcos is the strategic heart of Akoro Digital. With a background in brand development and business strategy, he leads the company's vision and client relationships. Marcos believes every brand has a story worth telling — and that the right digital strategy can tell it to the world.
-        </p>
-        <div class="founder-divider"></div>
-        <ul class="founder-contact">
-          <li><span>🔗</span> <a href="https://www.linkedin.com/in/marcos-patino-b5027b34b/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
-          <li><span>📍</span> New York, NY</li>
-        </ul>
-      </div>
-
-
-      <!-- NATHAN -->
-      <div class="founder-card reveal">
-        <div class="founder-avatar"><span class="founder-initials">NH</span></div>
-        <div class="founder-name">Nathan Huen</div>
-        <div class="founder-role">Co-Founder &amp; COO</div>
-        <p class="founder-bio">
-          Nathan is the operational engine of Akoro Digital. Overseeing both day-to-day operations and company finances, he keeps the business running with precision and purpose. Nathan ensures every project is delivered on time, every resource is optimized, and every dollar is working toward the company's growth.
-        </p>
-        <div class="founder-divider"></div>
-        <ul class="founder-contact">
-          <li><span>🔗</span> <a href="https://www.linkedin.com/in/nathan-huen-213916400/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
-          <li><span>📍</span> New York, NY</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <footer></footer>
-</div>
-
-<!-- ══════════ CONTACT ══════════ -->
-<div id="page-contact" class="page">
-  <div class="contact-wrap">
-    <div class="contact-inner">
-      <p class="section-label reveal">Get In Touch</p>
-      <h2 class="section-title reveal">Let's Build<br><em>Something Great</em></h2>
-      <div class="gold-line reveal"></div>
-
-      <div class="contact-card reveal">
-        <div class="contact-item">
-          <div class="contact-icon">✉</div>
-          <div>
-            <div class="contact-detail-label">General Inquiries</div>
-            <div class="contact-detail-value"><a href="mailto:AkoroDigital@gmail.com">AkoroDigital@gmail.com</a></div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">☎</div>
-          <div>
-            <div class="contact-detail-label">Call or Text</div>
-            <div class="contact-detail-value"><a href="tel:+18458599182">(845) 859-9182</a></div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">📍</div>
-          <div>
-            <div class="contact-detail-label">Headquarters</div>
-            <div class="contact-detail-value">United States</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="contact-card reveal" style="margin-top:1.5rem;">
-        <p class="section-label" style="margin-bottom:1.5rem;">Send a Message</p>
-        <div class="contact-form">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">First Name</label>
-              <input id="cf-first" class="form-input" type="text" placeholder="John"/>
-            </div>
-            <div class="form-group">
-              <label class="form-label">Last Name</label>
-              <input id="cf-last" class="form-input" type="text" placeholder="Doe"/>
-            </div>
-          </div>
-          <div class="form-group form-group-full">
-            <label class="form-label">Email Address</label>
-            <input id="cf-email" class="form-input" type="email" placeholder="john@example.com"/>
-          </div>
-          <div class="form-group form-group-full">
-            <label class="form-label">Subject</label>
-            <input id="cf-subject" class="form-input" type="text" placeholder="How can we help?"/>
-          </div>
-          <div class="form-group form-group-full">
-            <label class="form-label">Message</label>
-            <textarea id="cf-message" class="form-textarea" placeholder="Tell us about your project..."></textarea>
-          </div>
-          <button id="cf-btn" class="form-submit" onclick="sendMessage()"><span>Send Message</span></button>
-          <p id="cf-status" style="display:none;margin-top:1rem;font-size:0.78rem;letter-spacing:0.08em;text-align:center;"></p>
+  <!-- ABOUT -->
+  <section id="page-about" style="display:none; animation:fadeUp .5s ease both;">
+    <div style="max-width:1280px; margin:0 auto; padding:160px 32px 100px; display:grid; grid-template-columns:0.85fr 1.15fr; gap:64px; align-items:center;" data-two-col="">
+      <div class="image-slot rounded" style="width:100%; height:520px;">Marcos Patino, Founder</div>
+      <div>
+        <div style="font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-deep); margin-bottom:16px;">About</div>
+        <h1 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(32px,4.5vw,44px); line-height:1.15; margin:0 0 24px;">Real photography. Real businesses. One person behind the camera.</h1>
+        <p style="font-size:16.5px; line-height:1.75; color:var(--ink-soft); font-weight:300; margin:0 0 20px;">Akoro Digital is a photography and videography business built and run by Marcos Patino. Every shoot — product, storefront, headshot, or brand story — is done in person, on location, for real New York businesses and personal brands.</p>
+        <p style="font-size:16.5px; line-height:1.75; color:var(--ink-soft); font-weight:300; margin:0 0 32px;">No stock images. No phone-camera shots. Just photography and video that actually looks like you.</p>
+        <div style="border-top:1px solid var(--line); padding-top:28px;">
+          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; margin:0 0 12px;">Marcos Patino — Founder</h3>
+          <p style="font-size:15px; line-height:1.7; color:var(--ink-soft); font-weight:300; margin:0;">Marcos brings together a background in photography and video production with a strategic eye for what actually helps a business or personal brand grow — from the photos on a website to the listing that shows up on Google Maps. Akoro Digital is that combination in practice.</p>
         </div>
       </div>
     </div>
+    <div style="max-width:1280px; margin:0 auto; padding:0 32px 90px;">
+      <div class="image-slot rounded" style="width:100%; height:340px;">Behind the scenes / on location photo</div>
+    </div>
+    <div style="background:var(--card); border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:90px 32px;">
+      <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:40px;" data-three-col="">
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:20px; margin:0 0 12px;">On-location, always</h3>
+          <p style="font-size:14.5px; line-height:1.7; color:var(--ink-soft); font-weight:300; margin:0;">No studio, no stock photography — every session happens where your business or brand actually lives.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:20px; margin:0 0 12px;">Real photos, real results</h3>
+          <p style="font-size:14.5px; line-height:1.7; color:var(--ink-soft); font-weight:300; margin:0;">The goal isn't just a nice photo — it's a listing, website, or feed that actually converts.</p>
+        </div>
+        <div>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-weight:600; font-size:20px; margin:0 0 12px;">Built for local businesses</h3>
+          <p style="font-size:14.5px; line-height:1.7; color:var(--ink-soft); font-weight:300; margin:0;">Every session is built around what actually helps a New York business or brand get noticed.</p>
+        </div>
+      </div>
+    </div>
+    <div style="max-width:900px; margin:0 auto; padding:100px 32px; text-align:center;">
+      <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:36px; margin:0 0 26px;">Let's work together.</h2>
+      <span class="cta-go" style="cursor:pointer; padding:15px 30px; background:var(--ink); color:var(--bg); border:1px solid var(--ink); font-size:15px; letter-spacing:0.3px; border-radius:2px;">Book a Session</span>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="page-contact" style="display:none; animation:fadeUp .5s ease both;">
+    <div style="max-width:1280px; margin:0 auto; padding:160px 32px 120px; display:grid; grid-template-columns:0.8fr 1.2fr; gap:64px;" data-two-col="">
+      <div>
+        <div style="font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--gold-deep); margin-bottom:16px;">Contact</div>
+        <h1 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:clamp(30px,4vw,42px); margin:0 0 30px;">Let's talk about your shoot.</h1>
+        <div style="display:flex; flex-direction:column; gap:22px; font-size:15.5px;">
+          <div><div style="color:var(--ink-soft); font-size:13px; margin-bottom:4px;">Email</div><a href="mailto:AkoroDigital@gmail.com">AkoroDigital@gmail.com</a></div>
+          <div><div style="color:var(--ink-soft); font-size:13px; margin-bottom:4px;">Phone / Text</div><a href="tel:8458599182">(845) 859-9182</a></div>
+          <div><div style="color:var(--ink-soft); font-size:13px; margin-bottom:4px;">Location</div><div>New York, NY — on location</div></div>
+          <div><div style="color:var(--ink-soft); font-size:13px; margin-bottom:4px;">Instagram</div><a href="https://instagram.com/akoro.digital" target="_blank" rel="noopener">@akoro.digital</a></div>
+          <div><div style="color:var(--ink-soft); font-size:13px; margin-bottom:4px;">Reviews</div><a href="https://share.google/XRFYDhEQpNCxzt5Md" target="_blank" rel="noopener">Read &amp; leave a Google review</a></div>
+        </div>
+      </div>
+      <form id="contactForm" style="background:var(--card); border:1px solid var(--line); border-radius:4px; padding:40px; display:flex; flex-direction:column; gap:20px;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;" data-two-col="">
+          <label style="display:flex; flex-direction:column; gap:8px; font-size:13px; color:var(--ink-soft);">Name
+            <input required name="name" style="padding:12px 14px; border:1px solid var(--line); border-radius:2px; font-size:15px; font-family:inherit; background:var(--bg);">
+          </label>
+          <label style="display:flex; flex-direction:column; gap:8px; font-size:13px; color:var(--ink-soft);">Email
+            <input required type="email" name="email" style="padding:12px 14px; border:1px solid var(--line); border-radius:2px; font-size:15px; font-family:inherit; background:var(--bg);">
+          </label>
+        </div>
+        <label style="display:flex; flex-direction:column; gap:8px; font-size:13px; color:var(--ink-soft);">Phone
+          <input name="phone" style="padding:12px 14px; border:1px solid var(--line); border-radius:2px; font-size:15px; font-family:inherit; background:var(--bg);">
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px; font-size:13px; color:var(--ink-soft);">Service interest
+          <select name="service" style="padding:12px 14px; border:1px solid var(--line); border-radius:2px; font-size:15px; font-family:inherit; background:var(--bg);">
+            <option>Business Photography &amp; Video</option>
+            <option>Personal Brand Photography</option>
+            <option>Not sure yet</option>
+          </select>
+        </label>
+        <label style="display:flex; flex-direction:column; gap:8px; font-size:13px; color:var(--ink-soft);">Message
+          <textarea required rows="4" name="message" style="padding:12px 14px; border:1px solid var(--line); border-radius:2px; font-size:15px; font-family:inherit; resize:vertical; background:var(--bg);"></textarea>
+        </label>
+        <button type="submit" id="submitBtn" style="cursor:pointer; padding:15px 30px; background:var(--ink); color:var(--bg); border:none; font-size:15px; letter-spacing:0.3px; border-radius:2px; font-family:inherit;">Send Message</button>
+        <div id="formStatus" style="font-size:14px; color:var(--gold-deep); min-height:18px;"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer style="border-top:1px solid var(--line); padding:56px 32px 32px;">
+  <div style="max-width:1280px; margin:0 auto; display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:40px; margin-bottom:36px;" data-three-col="">
+    <div>
+      <div style="font-family:'Cormorant Garamond',serif; font-size:24px; font-weight:600; margin-bottom:12px;">Akoro Digital</div>
+      <p style="font-size:14px; color:var(--ink-soft); font-weight:300; max-width:280px; line-height:1.6;">Photography and videography for businesses &amp; personal brands. New York, NY.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; font-size:14px;">
+      <span class="navlink" data-page="home" style="cursor:pointer;">Home</span>
+      <span class="navlink" data-page="services" style="cursor:pointer;">Services</span>
+      <span class="navlink" data-page="about" style="cursor:pointer;">About</span>
+      <span class="navlink" data-page="contact" style="cursor:pointer;">Contact</span>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; font-size:14px; color:var(--ink-soft);">
+      <a href="mailto:AkoroDigital@gmail.com">AkoroDigital@gmail.com</a>
+      <a href="tel:8458599182">(845) 859-9182</a>
+      <a href="https://instagram.com/akoro.digital" target="_blank" rel="noopener">Instagram</a>
+    </div>
   </div>
-  <footer></footer>
-</div>
+  <div style="max-width:1280px; margin:0 auto; border-top:1px solid var(--line); padding-top:24px; font-size:13px; color:var(--ink-soft);">© 2026 Akoro Digital. New York, NY.</div>
+</footer>
 
 <script>
-  window.addEventListener('DOMContentLoaded', function () {
-    if (window.emailjs) emailjs.init('dzpGHH2-EoOhzRGZh');
+  function setPage(name) {
+    ['home','services','about','contact'].forEach(function(p) {
+      document.getElementById('page-' + p).style.display = (p === name) ? 'block' : 'none';
+    });
+    document.querySelectorAll('.navlink').forEach(function(el) {
+      var active = el.getAttribute('data-page') === name;
+      el.style.color = active ? '#b3742f' : '';
+      el.style.fontWeight = active ? '600' : '400';
+      el.style.borderBottom = active ? '1px solid #b3742f' : '1px solid transparent';
+    });
+    closeMobile();
+    window.scrollTo(0, 0);
+  }
+  function openMobile() { document.getElementById('mobileMenu').style.display = 'flex'; }
+  function closeMobile() { document.getElementById('mobileMenu').style.display = 'none'; }
+
+  document.querySelectorAll('.navlink').forEach(function(el) {
+    el.addEventListener('click', function() { setPage(el.getAttribute('data-page')); });
+  });
+  document.querySelectorAll('.cta-go').forEach(function(el) {
+    el.addEventListener('click', function() { setPage('contact'); });
+  });
+  document.getElementById('logo').addEventListener('click', function() { setPage('home'); });
+  document.getElementById('mobileToggle').addEventListener('click', openMobile);
+  document.getElementById('mobileClose').addEventListener('click', closeMobile);
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var btn = document.getElementById('submitBtn');
+    var status = document.getElementById('formStatus');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    status.textContent = 'Sending…';
+    setTimeout(function() {
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+      status.textContent = "Thanks — I'll be in touch shortly.";
+      e.target.reset();
+    }, 600);
   });
 
-  /* Shared footer with social + Google links, injected into every page */
-  var FOOTER_HTML = `
-    <div class="footer-left">
-      <div class="footer-logo">AKORO DIGITAL</div>
-      <div class="footer-copy">© 2026 Akoro Digital. All rights reserved. &nbsp;|&nbsp; <a href="mailto:AkoroDigital@gmail.com">AkoroDigital@gmail.com</a></div>
-    </div>
-    <div class="footer-social">
-      <a class="social-link" href="https://share.google/XRFYDhEQpNCxzt5Md" target="_blank" rel="noopener" aria-label="Google Business Profile">
-        <svg viewBox="0 0 24 24"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.85 3.18-1.73 4.1-1.07 1.07-2.74 2.25-5.69 2.25-4.54 0-8.09-3.66-8.09-8.2s3.55-8.2 8.09-8.2c2.45 0 4.24.96 5.56 2.2l2.31-2.31C18.99 2.18 16.5 1 12.48 1 6.49 1 1.46 5.87 1.46 11.86s5.03 10.86 11.02 10.86c3.24 0 5.68-1.06 7.6-3.06 1.96-1.96 2.57-4.71 2.57-6.94 0-.69-.05-1.33-.16-1.86h-9.99z"/></svg>
-        Google
-      </a>
-      <a class="social-link" href="https://www.instagram.com/akoro.digital" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.43.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.43.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.43-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.43-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.12 1.38C1.36 2.67.95 3.34.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.12.66.66 1.33 1.07 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.12-1.38.66-.66 1.07-1.33 1.38-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.12C21.33 1.36 20.66.95 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.16A4 4 0 1 1 16 12a4 4 0 0 1-4 4zm6.41-10.41a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg>
-        Instagram
-      </a>
-    </div>
-  `;
-  document.querySelectorAll('footer').forEach(function (f) { f.innerHTML = FOOTER_HTML; });
-
-  function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('open');
-    document.getElementById('navToggle').classList.toggle('open');
-  }
-
-  function closeMenu() {
-    document.getElementById('navLinks').classList.remove('open');
-    document.getElementById('navToggle').classList.remove('open');
-  }
-
-  function showPage(id) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page-' + id).classList.add('active');
-    closeMenu();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setTimeout(initReveal, 100);
-  }
-
-  function sendMessage() {
-    const first   = document.getElementById('cf-first').value.trim();
-    const last    = document.getElementById('cf-last').value.trim();
-    const email   = document.getElementById('cf-email').value.trim();
-    const subject = document.getElementById('cf-subject').value.trim();
-    const message = document.getElementById('cf-message').value.trim();
-    const btn     = document.getElementById('cf-btn');
-    const status  = document.getElementById('cf-status');
-
-    if (!first || !message) {
-      showStatus('Please fill in at least your first name and message.', 'error');
-      return;
-    }
-
-    const fullName = (first + ' ' + last).trim();
-
-    btn.disabled = true;
-    btn.querySelector('span').textContent = 'Sending…';
-    status.style.display = 'none';
-
-    emailjs.send('service_godr32o', 'template_tr11zso', {
-      from_name:  fullName,
-      from_email: email,
-      subject:    subject || 'Website Inquiry',
-      message:    message
-    })
-    .then(() => {
-      showStatus('✓ Message sent! We\'ll be in touch soon.', 'success');
-      document.getElementById('cf-first').value = '';
-      document.getElementById('cf-last').value = '';
-      document.getElementById('cf-email').value = '';
-      document.getElementById('cf-subject').value = '';
-      document.getElementById('cf-message').value = '';
-      btn.querySelector('span').textContent = 'Send Message';
-      btn.disabled = false;
-    })
-    .catch(() => {
-      showStatus('Something went wrong. Please email us directly at AkoroDigital@gmail.com', 'error');
-      btn.querySelector('span').textContent = 'Send Message';
-      btn.disabled = false;
-    });
-  }
-
-  function showStatus(msg, type) {
-    const el = document.getElementById('cf-status');
-    el.textContent = msg;
-    el.style.display = 'block';
-    el.style.color = type === 'success' ? 'var(--gold)' : '#e07a7a';
-  }
-
-  function initReveal() {
-    const els = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 80);
-        }
-      });
-    }, { threshold: 0.1 });
-    els.forEach(el => obs.observe(el));
-  }
-
-  initReveal();
-
-  /* ── Interactive hero spotlight ──
-     Makes the gold glow glide after the cursor and lights up the grid
-     in a circle around it. Falls back to centered (the original look)
-     when the mouse leaves or on touch devices with no pointer. */
-  (function () {
-    const hero = document.getElementById('hero');
-    if (!hero) return;
-    const glow = document.getElementById('heroGlow');
-
-    let rect = hero.getBoundingClientRect();
-    let tx = rect.width / 2,  ty = rect.height * 0.45;   // target (defaults to center)
-    let cx = tx,              cy = ty;                    // current (eased)
-
-    function setVars() {
-      hero.style.setProperty('--hero-mx', cx.toFixed(1) + 'px');
-      hero.style.setProperty('--hero-my', cy.toFixed(1) + 'px');
-    }
-
-    hero.addEventListener('mousemove', (e) => {
-      rect = hero.getBoundingClientRect();
-      tx = e.clientX - rect.left;
-      ty = e.clientY - rect.top;
-      if (glow) glow.style.opacity = 1;
-    });
-
-    hero.addEventListener('mouseleave', () => {
-      rect = hero.getBoundingClientRect();
-      tx = rect.width / 2;
-      ty = rect.height * 0.45;
-    });
-
-    window.addEventListener('resize', () => { rect = hero.getBoundingClientRect(); });
-
-    function tick() {
-      cx += (tx - cx) * 0.12;   // easing — lower = more lag, higher = snappier
-      cy += (ty - cy) * 0.12;
-      setVars();
-      requestAnimationFrame(tick);
-    }
-
-    setVars();
-    tick();
-  })();
+  setPage('home');
 </script>
 </body>
 </html>
