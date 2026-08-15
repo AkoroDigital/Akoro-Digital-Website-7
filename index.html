@@ -224,9 +224,14 @@
     }
     spline-viewer {
       width: 100%; height: 100%;
-      filter: brightness(0.72) contrast(1.18) saturate(0.85);
-      image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
+    }
+    .spline-tint {
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 5, 5, 0.38);
+      mix-blend-mode: multiply;
+      pointer-events: none;
+      z-index: 1;
     }
 
     .scroll-hint {
@@ -738,6 +743,7 @@
   </div>
   <div class="spline-wrap">
     <spline-viewer url="./a05a6df5-scene.splinecode" loading-anim-type="none" pixel-ratio="2"></spline-viewer>
+    <div class="spline-tint"></div>
   </div>
   <div class="scroll-hint">
     <span class="scroll-hint-line"></span>
