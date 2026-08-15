@@ -221,17 +221,18 @@
       position: relative;
       height: 100vh;
       z-index: 0;
+      isolation: isolate;
     }
     spline-viewer {
       width: 100%; height: 100%;
+      display: block;
     }
     .spline-tint {
       position: absolute;
       inset: 0;
-      background: rgba(5, 5, 5, 0.38);
-      mix-blend-mode: multiply;
+      background: rgba(0, 0, 0, 0.48);
       pointer-events: none;
-      z-index: 1;
+      z-index: 2;
     }
 
     .scroll-hint {
@@ -742,7 +743,7 @@
     </div>
   </div>
   <div class="spline-wrap">
-    <spline-viewer url="./a05a6df5-scene.splinecode" loading-anim-type="none" pixel-ratio="2"></spline-viewer>
+    <spline-viewer url="./a05a6df5-scene.splinecode" loading-anim-type="none"></spline-viewer>
     <div class="spline-tint"></div>
   </div>
   <div class="scroll-hint">
@@ -802,28 +803,28 @@
   </div>
   <div class="gallery-grid">
     <div class="gallery-item reveal">
-      <img src="./gallery-gym.jpg" alt="Fitness brand content" loading="lazy">
+      <img src="./image0.jpeg" alt="Fitness brand content" loading="lazy">
       <div class="gallery-caption">
         <span class="gallery-caption-tag">Fitness</span>
         <span class="gallery-caption-title">Performance Content</span>
       </div>
     </div>
     <div class="gallery-item reveal">
-      <img src="./gallery-athlete.jpg" alt="Athletic brand content" loading="lazy">
+      <img src="./image1.jpeg" alt="Athletic brand content" loading="lazy">
       <div class="gallery-caption">
         <span class="gallery-caption-tag">Athletics</span>
         <span class="gallery-caption-title">Sports &amp; Movement</span>
       </div>
     </div>
     <div class="gallery-item reveal">
-      <img src="./gallery-barbershop.jpg" alt="Barbershop brand content" loading="lazy">
+      <img src="./image2.jpeg" alt="Barbershop brand content" loading="lazy">
       <div class="gallery-caption">
         <span class="gallery-caption-tag">Lifestyle</span>
         <span class="gallery-caption-title">Brand Identity</span>
       </div>
     </div>
     <div class="gallery-item reveal">
-      <img src="./gallery-studio.jpg" alt="Studio production content" loading="lazy">
+      <img src="./image3.jpeg" alt="Studio production content" loading="lazy">
       <div class="gallery-caption">
         <span class="gallery-caption-tag">Production</span>
         <span class="gallery-caption-title">Studio Shoots</span>
