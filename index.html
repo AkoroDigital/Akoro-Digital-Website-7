@@ -12,9 +12,7 @@
     "name": "Akoro Digital",
     "description": "Social media marketing agency in New York specializing in social media management, content creation, and paid advertising.",
     "founder": [
-      { "@type": "Person", "name": "Marcos Patino", "jobTitle": "Founder & CEO" },
-      { "@type": "Person", "name": "Nathan Huen", "jobTitle": "Co-Founder & COO" },
-      { "@type": "Person", "name": "Arjun Murali", "jobTitle": "Co-Founder & CMO" }
+      { "@type": "Person", "name": "Marcos Patino", "jobTitle": "Founder & CEO" }
     ],
     "areaServed": "New York, NY",
     "email": "AkoroDigital@gmail.com",
@@ -22,7 +20,6 @@
   }
   </script>
 
-  <script type="module" src="https://unpkg.com/@splinetool/viewer@latest/build/spline-viewer.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Josefin+Sans:wght@100;300;400;600&display=swap" rel="stylesheet"/>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
@@ -217,22 +214,17 @@
       animation: fadeUp 0.9s 0.8s forwards;
     }
 
-    .spline-wrap {
+    .hero-image-wrap {
       position: relative;
       height: 100vh;
       z-index: 0;
-      isolation: isolate;
+      overflow: hidden;
     }
-    spline-viewer {
+    .hero-image-wrap img {
       width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center center;
       display: block;
-    }
-    .spline-tint {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.48);
-      pointer-events: none;
-      z-index: 2;
     }
 
     .scroll-hint {
@@ -327,7 +319,7 @@
     #services { background: var(--black-soft); }
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1px;
       background: var(--black-border);
       border: 1px solid var(--black-border);
@@ -513,7 +505,8 @@
     #founders { background: var(--black-soft); }
     .founders-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr;
+      max-width: 600px;
       gap: 1.5rem; margin-top: 3.5rem;
     }
     .founder-card {
@@ -666,7 +659,7 @@
 
     @media (max-width: 1100px) {
       #hero { grid-template-columns: 1fr; }
-      .spline-wrap {
+      .hero-image-wrap {
         position: absolute; inset: 0;
         opacity: 0.35; z-index: 0;
       }
@@ -683,9 +676,8 @@
     }
     @media (max-width: 900px) {
       .about-grid     { grid-template-columns: 1fr; }
-      .founders-grid  { grid-template-columns: 1fr; }
       .contact-grid   { grid-template-columns: 1fr; }
-      .services-grid  { grid-template-columns: 1fr 1fr; }
+      .services-grid  { grid-template-columns: 1fr; }
       .gallery-grid   { grid-template-columns: 1fr 1fr; }
       .work-header    { flex-direction: column; align-items: flex-start; }
     }
@@ -706,7 +698,7 @@
   <a href="#hero"     onclick="closeMobileMenu()">Home</a>
   <a href="#services" onclick="closeMobileMenu()">Services</a>
   <a href="#about"    onclick="closeMobileMenu()">About</a>
-  <a href="#founders" onclick="closeMobileMenu()">Founders</a>
+  <a href="#founders" onclick="closeMobileMenu()">Team</a>
   <a href="#contact"  onclick="closeMobileMenu()">Contact</a>
 </div>
 
@@ -719,7 +711,7 @@
     <li><a href="#hero">Home</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#founders">Founders</a></li>
+    <li><a href="#founders">Team</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start Growing</button>
@@ -742,9 +734,8 @@
       </button>
     </div>
   </div>
-  <div class="spline-wrap">
-    <spline-viewer url="./a05a6df5-scene.splinecode" loading-anim-type="none"></spline-viewer>
-    <div class="spline-tint"></div>
+  <div class="hero-image-wrap">
+    <img src="./hero-bg.jpg.png" alt="Akoro Digital — Professional Content Creation" />
   </div>
   <div class="scroll-hint">
     <span class="scroll-hint-line"></span>
@@ -765,29 +756,19 @@
         <p class="service-desc">Daily content calendars, post scheduling, and community management across Instagram, TikTok, LinkedIn, X, and Facebook. We keep your brand active and engaged 24/7.</p>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><polygon points="10 8 16 12 10 16 10 8"/></svg></div>
-        <div class="service-name">Content Creation</div>
-        <p class="service-desc">Scroll-stopping reels, carousels, stories, and static graphics crafted for each platform. Visuals engineered to stop thumbs and drive action.</p>
-      </div>
-      <div class="service-card reveal">
         <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18 9l-5 5-4-4-3 3"/></svg></div>
-        <div class="service-name">Paid Social Advertising</div>
-        <p class="service-desc">High-converting Meta, Instagram, TikTok, and LinkedIn ad campaigns. Precision audience targeting with continuous A/B testing to maximize your ROI.</p>
+        <div class="service-name">Campaign Management</div>
+        <p class="service-desc">End-to-end management of paid social campaigns across Meta, TikTok, and Google. From creative strategy to launch, optimization, and detailed performance reporting.</p>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20"/><path d="M2 12h20"/></svg></div>
-        <div class="service-name">Growth Strategy</div>
-        <p class="service-desc">Audience research, competitor analysis, hashtag strategy, and algorithmic optimization — all mapped to a long-term growth roadmap built for your brand.</p>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <div class="service-name">Website &amp; CRM</div>
+        <p class="service-desc">Custom landing pages, full website builds, and CRM integrations that turn your social media traffic into leads — with automated follow-up flows built in from day one.</p>
       </div>
       <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"/><path d="M22 12A10 10 0 0 0 12 2v10z"/></svg></div>
-        <div class="service-name">Analytics &amp; Reporting</div>
-        <p class="service-desc">Monthly deep-dive reports tracking follower growth, engagement rate, reach, click-through rate, conversions, and ROAS — with clear, actionable next steps.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-        <div class="service-name">Brand Identity</div>
-        <p class="service-desc">Visual identity systems, brand voice guidelines, and social media style guides — built to make your brand unmistakable across every platform and touchpoint.</p>
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <div class="service-name">Text Assistant</div>
+        <p class="service-desc">AI-powered SMS and messaging automations that engage your audience, answer inquiries, and nurture leads around the clock — so no conversation ever goes unanswered.</p>
       </div>
     </div>
   </div>
@@ -857,7 +838,7 @@
 <section id="founders">
   <div class="section-inner">
     <p class="section-label reveal">The Team</p>
-    <h2 class="section-title reveal">Meet the <em>Founders</em></h2>
+    <h2 class="section-title reveal">Meet the <em>Founder</em></h2>
     <div class="gold-line reveal"></div>
     <div class="founders-grid">
       <div class="founder-card reveal">
@@ -868,28 +849,6 @@
         <div class="founder-divider"></div>
         <ul class="founder-links">
           <li><span>🔗</span><a href="https://www.linkedin.com/in/marcos-patino-b5027b34b/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
-          <li><span>📍</span>New York, NY</li>
-        </ul>
-      </div>
-      <div class="founder-card reveal">
-        <div class="founder-avatar"><span class="founder-initials">NH</span></div>
-        <div class="founder-name">Nathan Huen</div>
-        <div class="founder-role">Co-Founder &amp; COO</div>
-        <p class="founder-bio">Nathan is the operational engine of Akoro Digital. Overseeing day-to-day operations and company finances, he keeps the business running with precision and purpose. Nathan ensures every project is delivered on time, every resource optimized, and every dollar working toward growth.</p>
-        <div class="founder-divider"></div>
-        <ul class="founder-links">
-          <li><span>🔗</span><a href="https://www.linkedin.com/in/nathan-huen-213916400/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
-          <li><span>📍</span>New York, NY</li>
-        </ul>
-      </div>
-      <div class="founder-card reveal">
-        <div class="founder-avatar"><span class="founder-initials">AM</span></div>
-        <div class="founder-name">Arjun Murali</div>
-        <div class="founder-role">Co-Founder &amp; CMO</div>
-        <p class="founder-bio">Arjun drives Akoro's growth through data-driven marketing and creative campaigns that resonate. With expertise in digital marketing, SEO, and analytics, he ensures every campaign delivers measurable impact. His approach blends creativity with precision to maximize every dollar.</p>
-        <div class="founder-divider"></div>
-        <ul class="founder-links">
-          <li><span>🔗</span><a href="https://www.linkedin.com/in/arjun-murali-0a612032a/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
           <li><span>📍</span>New York, NY</li>
         </ul>
       </div>
