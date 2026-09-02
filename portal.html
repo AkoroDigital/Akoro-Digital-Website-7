@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Client Portal | Akoro Digital</title>
+  <meta name="robots" content="noindex, nofollow"/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --black:        #050505;
+      --black-soft:   #0d0d0d;
+      --black-card:   #111111;
+      --black-border: #1a1a1a;
+      --gold:         #c9a84c;
+      --gold-light:   #e4c97e;
+      --gold-dim:     #8a6e2f;
+      --white:        #f5f0e8;
+      --white-dim:    #a89e8c;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body:    'Space Grotesk', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Grain */
+    body::after {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.35;
+    }
+
+    /* Nav */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 5vw;
+      border-bottom: 1px solid var(--black-border);
+      position: sticky; top: 0;
+      background: rgba(5,5,5,0.97);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.8rem;
+      text-decoration: none;
+    }
+    .nav-logo img {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--gold-dim);
+    }
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 1.2rem; font-weight: 600;
+      letter-spacing: 0.2em; color: var(--gold);
+    }
+    .nav-badge {
+      font-size: 0.58rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--white-dim);
+      border: 1px solid var(--black-border);
+      padding: 0.4rem 0.9rem;
+      border-radius: 2px;
+    }
+
+    /* Page hero */
+    .portal-hero {
+      padding: 5rem 5vw 3.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      text-align: center;
+    }
+    .portal-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.45em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 1.2rem;
+    }
+    .portal-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 300;
+      line-height: 1.08;
+      margin-bottom: 1.2rem;
+    }
+    .portal-title em { color: var(--gold); font-style: italic; }
+    .portal-sub {
+      font-size: 0.9rem;
+      line-height: 1.85;
+      color: var(--white-dim);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* Divider */
+    .gold-rule {
+      width: 50px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 2.5rem auto;
+    }
+
+    /* Cards grid */
+    .cards-wrap {
+      padding: 0 5vw 6rem;
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+      flex: 1;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--black-border);
+      border: 1px solid var(--black-border);
+    }
+
+    .booking-card {
+      background: var(--black-card);
+      padding: 2.6rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .booking-card:hover { background: var(--black-soft); }
+    .booking-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform: scaleX(0);
+      transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+    }
+    .booking-card:hover::after { transform: scaleX(1); }
+
+    .card-icon {
+      width: 44px; height: 44px;
+      border: 1px solid var(--gold-dim);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.6rem;
+      flex-shrink: 0;
+    }
+    .card-icon svg {
+      width: 18px; height: 18px;
+      stroke: var(--gold); fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .card-duration {
+      font-size: 0.58rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold-dim);
+      margin-bottom: 0.6rem;
+    }
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem; font-weight: 400;
+      color: var(--white);
+      margin-bottom: 0.8rem;
+      line-height: 1.15;
+    }
+    .card-desc {
+      font-size: 0.78rem;
+      line-height: 1.9;
+      color: var(--white-dim);
+      flex: 1;
+    }
+    .card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 2rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      transition: gap 0.3s;
+    }
+    .booking-card:hover .card-cta { gap: 0.9rem; }
+    .card-cta svg {
+      width: 14px; height: 14px;
+      stroke: var(--gold); fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* Wide card (spans both columns) */
+    .booking-card--wide {
+      grid-column: 1 / -1;
+    }
+    .booking-card--wide .card-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    /* Contact fallback */
+    .contact-fallback {
+      margin-top: 3.5rem;
+      padding: 2rem;
+      border: 1px solid var(--black-border);
+      text-align: center;
+    }
+    .contact-fallback p {
+      font-size: 0.78rem;
+      color: var(--white-dim);
+      line-height: 1.8;
+    }
+    .contact-fallback a {
+      color: var(--gold-light);
+      text-decoration: none;
+    }
+    .contact-fallback a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--black-border);
+      padding: 1.8rem 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1rem; color: var(--gold); letter-spacing: 0.18em;
+    }
+    .footer-copy {
+      font-size: 0.58rem; letter-spacing: 0.12em; color: var(--white-dim);
+    }
+    .footer-copy a { color: var(--gold-dim); text-decoration: none; }
+    .footer-copy a:hover { color: var(--gold-light); }
+
+    /* Mobile */
+    @media (max-width: 640px) {
+      .portal-hero { padding: 3.5rem 5vw 2.5rem; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .booking-card--wide { grid-column: 1; }
+      .booking-card--wide .card-body { grid-template-columns: 1fr; gap: 0; }
+      .nav-badge { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="nav-logo" href="./index.html">
+    <img src="./akoro-logo.png" alt="Akoro Digital"/>
+    <span class="nav-logo-text">AKORO</span>
+  </a>
+  <span class="nav-badge">Client Portal</span>
+</header>
+
+<div class="portal-hero">
+  <p class="portal-label">Welcome</p>
+  <h1 class="portal-title">Book a <em>Meeting</em></h1>
+  <div class="gold-rule"></div>
+  <p class="portal-sub">Pick the session that fits where you are. All calls are with Marcos directly. Pick a time that works for you and we'll confirm right away.</p>
+</div>
+
+<div class="cards-wrap">
+  <div class="cards-grid">
+
+    <!-- Intro Call -->
+    <a class="booking-card" href="#CALENDLY_LINK" target="_blank" rel="noopener">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+      </div>
+      <div class="card-duration">30 minutes</div>
+      <div class="card-title">Intro Call</div>
+      <p class="card-desc">First time connecting with us? This is where we learn about your business, what you're trying to accomplish, and whether we're the right fit. No pitch, just a real conversation.</p>
+      <div class="card-cta">
+        Book Now
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+
+    <!-- Strategy Session -->
+    <a class="booking-card" href="#CALENDLY_LINK" target="_blank" rel="noopener">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+      </div>
+      <div class="card-duration">60 minutes</div>
+      <div class="card-title">Strategy Session</div>
+      <p class="card-desc">For active clients or serious prospects. We go deep on your goals, review what's working, and map out the next 60 to 90 days. Come with questions.</p>
+      <div class="card-cta">
+        Book Now
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </div>
+    </a>
+
+    <!-- Monthly Check-in (wide) -->
+    <a class="booking-card booking-card--wide" href="#CALENDLY_LINK" target="_blank" rel="noopener">
+      <div class="card-body">
+        <div>
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div class="card-duration">30 minutes</div>
+          <div class="card-title">Monthly Check-in</div>
+          <div class="card-cta">
+            Book Now
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+        <div style="display:flex; align-items:center;">
+          <p class="card-desc">Your monthly touchpoint to review results, go over the report, and plan content for the next month. For existing clients on a retainer plan.</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="contact-fallback">
+    <p>Prefer to reach out directly? Email us at <a href="mailto:AkoroDigital@gmail.com">AkoroDigital@gmail.com</a> or find us on Instagram at <a href="https://instagram.com/akoro.digital" target="_blank" rel="noopener">@akoro.digital</a></p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">AKORO DIGITAL</div>
+  <div class="footer-copy">
+    &copy; 2025 Akoro Digital. &nbsp;|&nbsp;
+    <a href="./index.html">Back to main site</a>
+  </div>
+</footer>
+
+</body>
+</html>
