@@ -58,6 +58,7 @@
       opacity: 0.35;
     }
 
+    /* Nav */
     nav {
       position: fixed; top: 0; left: 0; right: 0;
       z-index: 500;
@@ -70,7 +71,6 @@
       box-shadow: 0 1px 0 var(--black-border);
       backdrop-filter: blur(12px);
     }
-
     .nav-logo {
       display: flex; align-items: center; gap: 0.8rem;
       cursor: pointer; text-decoration: none;
@@ -83,54 +83,37 @@
     }
     .nav-logo-text {
       font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      color: var(--gold);
+      font-size: 1.25rem; font-weight: 600;
+      letter-spacing: 0.2em; color: var(--gold);
     }
-
     .nav-links {
       display: flex; gap: 2.5rem; list-style: none;
     }
     .nav-links a {
-      color: var(--white-dim);
-      text-decoration: none;
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      transition: color 0.3s;
-      cursor: pointer;
+      color: var(--white-dim); text-decoration: none;
+      font-size: 0.68rem; letter-spacing: 0.2em;
+      text-transform: uppercase; transition: color 0.3s; cursor: pointer;
     }
     .nav-links a:hover { color: var(--gold-light); }
-
     .nav-cta {
       padding: 0.7rem 1.6rem;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      font-family: var(--font-body);
-      font-size: 0.66rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      background: transparent;
-      cursor: pointer;
-      transition: all 0.3s;
+      border: 1px solid var(--gold); color: var(--gold);
+      font-family: var(--font-body); font-size: 0.66rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      background: transparent; cursor: pointer; transition: all 0.3s;
       text-decoration: none;
     }
     .nav-cta:hover { background: var(--gold); color: var(--black); }
-
     .nav-toggle {
-      display: none;
-      flex-direction: column; gap: 5px;
+      display: none; flex-direction: column; gap: 5px;
       cursor: pointer; background: none; border: none; padding: 6px;
     }
     .nav-toggle span {
-      display: block; height: 1px; background: var(--white);
-      transition: all 0.3s;
+      display: block; height: 1px; background: var(--white); transition: all 0.3s;
     }
     .nav-toggle span:nth-child(1) { width: 24px; }
     .nav-toggle span:nth-child(2) { width: 24px; }
     .nav-toggle span:nth-child(3) { width: 16px; }
-
     .mobile-menu {
       position: fixed; inset: 0; z-index: 600;
       background: var(--black);
@@ -140,8 +123,7 @@
     .mobile-menu.open { display: flex; }
     .mobile-close {
       position: absolute; top: 1.5rem; right: 2rem;
-      background: none; border: none;
-      color: var(--white); font-size: 2rem; cursor: pointer;
+      background: none; border: none; color: var(--white); font-size: 2rem; cursor: pointer;
     }
     .mobile-menu a {
       font-family: var(--font-display);
@@ -153,175 +135,115 @@
 
     /* Hero */
     #hero {
-      position: relative;
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 45% 55%;
-      align-items: center;
-      overflow: hidden;
+      position: relative; min-height: 100vh;
+      display: grid; grid-template-columns: 45% 55%;
+      align-items: center; overflow: hidden;
     }
-
     #hero::before {
       content: '';
       position: absolute; inset: 0;
       background: linear-gradient(90deg,
-        var(--black) 0%,
-        var(--black) 38%,
-        rgba(5,5,5,0.7) 55%,
-        transparent 80%
+        var(--black) 0%, var(--black) 38%,
+        rgba(5,5,5,0.7) 55%, transparent 80%
       );
       z-index: 1; pointer-events: none;
     }
-
     .hero-content {
       position: relative; z-index: 2;
       padding: 7rem 5vw 5rem calc(5vw);
     }
-
     .hero-eyebrow {
-      font-size: 0.62rem;
-      letter-spacing: 0.45em;
-      text-transform: uppercase;
-      color: var(--gold);
+      font-size: 0.62rem; letter-spacing: 0.45em;
+      text-transform: uppercase; color: var(--gold);
       margin-bottom: 1.6rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.2s forwards;
+      opacity: 0; animation: fadeUp 0.9s 0.2s forwards;
     }
-
     .hero-title {
       font-family: var(--font-display);
       font-size: clamp(3.8rem, 6.5vw, 7.5rem);
-      font-weight: 300;
-      line-height: 0.93;
+      font-weight: 300; line-height: 0.93;
       margin-bottom: 1rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.4s forwards;
+      opacity: 0; animation: fadeUp 0.9s 0.4s forwards;
     }
     .hero-title em { color: var(--gold); font-style: italic; }
-
     .hero-tagline {
       font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-style: italic;
-      color: var(--gold-dim);
-      letter-spacing: 0.08em;
+      font-size: 1.15rem; font-style: italic;
+      color: var(--gold-dim); letter-spacing: 0.08em;
       margin-bottom: 1.8rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.55s forwards;
+      opacity: 0; animation: fadeUp 0.9s 0.55s forwards;
     }
-
     .hero-sub {
-      font-size: 0.8rem;
-      line-height: 2.1;
-      color: var(--white-dim);
-      max-width: 400px;
+      font-size: 0.8rem; line-height: 2.1;
+      color: var(--white-dim); max-width: 400px;
       margin-bottom: 2.5rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.7s forwards;
+      opacity: 0; animation: fadeUp 0.9s 0.7s forwards;
     }
-
     .hero-cta {
       display: flex; gap: 1.2rem; flex-wrap: wrap;
-      opacity: 0;
-      animation: fadeUp 0.9s 0.9s forwards;
+      opacity: 0; animation: fadeUp 0.9s 0.9s forwards;
     }
-
     .hero-image-wrap {
-      position: relative;
-      height: 100vh;
-      z-index: 0;
-      overflow: hidden;
+      position: relative; height: 100vh; z-index: 0; overflow: hidden;
     }
     .hero-image-wrap img {
       width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center center;
-      display: block;
+      object-fit: cover; object-position: center center; display: block;
     }
-
     .scroll-hint {
-      position: absolute; bottom: 2.5rem; left: 5vw;
-      z-index: 2;
+      position: absolute; bottom: 2.5rem; left: 5vw; z-index: 2;
       display: flex; align-items: center; gap: 0.8rem;
-      opacity: 0;
-      animation: fadeUp 0.9s 1.2s forwards;
+      opacity: 0; animation: fadeUp 0.9s 1.2s forwards;
     }
-    .scroll-hint-line {
-      width: 36px; height: 1px;
-      background: var(--gold-dim);
-    }
+    .scroll-hint-line { width: 36px; height: 1px; background: var(--gold-dim); }
     .scroll-hint span {
-      font-size: 0.58rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--white-dim);
+      font-size: 0.58rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--white-dim);
     }
 
+    /* Buttons */
     .btn-gold {
-      padding: 1rem 2.4rem;
-      background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      font-family: var(--font-body);
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: color 0.35s;
+      padding: 1rem 2.4rem; background: transparent;
+      border: 1px solid var(--gold); color: var(--gold);
+      font-family: var(--font-body); font-size: 0.68rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      cursor: pointer; transition: color 0.35s;
       position: relative; overflow: hidden;
     }
     .btn-gold::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: var(--gold);
-      transform: translateY(101%);
+      content: ''; position: absolute; inset: 0;
+      background: var(--gold); transform: translateY(101%);
       transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
     }
     .btn-gold:hover::before { transform: translateY(0); }
     .btn-gold:hover { color: var(--black); }
     .btn-gold span { position: relative; z-index: 1; }
-
     .btn-ghost {
-      padding: 1rem 2.4rem;
-      background: transparent;
-      border: 1px solid var(--black-border);
-      color: var(--white-dim);
-      font-family: var(--font-body);
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 0.35s;
+      padding: 1rem 2.4rem; background: transparent;
+      border: 1px solid var(--black-border); color: var(--white-dim);
+      font-family: var(--font-body); font-size: 0.68rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      cursor: pointer; transition: all 0.35s;
     }
     .btn-ghost:hover { border-color: var(--white-dim); color: var(--white); }
 
-    /* Shared section styles */
+    /* Shared section */
     .section-inner {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 7rem 5vw;
+      max-width: 1280px; margin: 0 auto; padding: 7rem 5vw;
     }
     .section-label {
-      font-size: 0.6rem;
-      letter-spacing: 0.45em;
-      text-transform: uppercase;
-      color: var(--gold-dim);
-      margin-bottom: 0.8rem;
+      font-size: 0.6rem; letter-spacing: 0.45em;
+      text-transform: uppercase; color: var(--gold-dim); margin-bottom: 0.8rem;
     }
     .section-title {
       font-family: var(--font-display);
       font-size: clamp(2.4rem, 4.5vw, 4.5rem);
-      font-weight: 300;
-      line-height: 1.05;
-      margin-bottom: 1.2rem;
+      font-weight: 300; line-height: 1.05; margin-bottom: 1.2rem;
     }
     .section-title em { color: var(--gold); font-style: italic; }
     .section-sub {
-      font-size: 0.8rem;
-      line-height: 2.1;
-      color: var(--white-dim);
-      max-width: 560px;
-      margin-bottom: 4rem;
+      font-size: 0.8rem; line-height: 2.1;
+      color: var(--white-dim); max-width: 560px; margin-bottom: 4rem;
     }
     .gold-line {
       width: 50px; height: 1px;
@@ -329,38 +251,44 @@
       margin-bottom: 1rem;
     }
 
-    /* Acquisition System */
-    #services { background: var(--black-soft); }
+    /* Statement bar */
+    .statement-bar {
+      background: var(--gold);
+      padding: 1.4rem 5vw;
+      display: flex; align-items: center; justify-content: center;
+      gap: 3rem; flex-wrap: wrap;
+    }
+    .statement-bar-item {
+      display: flex; align-items: center; gap: 0.8rem;
+      font-size: 0.68rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--black);
+      font-weight: 500;
+    }
+    .statement-bar-dot {
+      width: 4px; height: 4px; border-radius: 50%;
+      background: rgba(5,5,5,0.35);
+    }
 
+    /* Services / Acquisition System */
+    #services { background: var(--black-soft); }
     .package-label {
       display: inline-block;
-      font-size: 0.56rem;
-      letter-spacing: 0.5em;
-      text-transform: uppercase;
-      color: var(--black);
-      background: var(--gold);
-      padding: 0.35rem 1rem;
-      margin-bottom: 1.4rem;
+      font-size: 0.56rem; letter-spacing: 0.5em;
+      text-transform: uppercase; color: var(--black);
+      background: var(--gold); padding: 0.35rem 1rem; margin-bottom: 1.4rem;
     }
-
     .engines-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: var(--black-border);
-      border: 1px solid var(--black-border);
-      margin-top: 0.5rem;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--black-border);
+      border: 1px solid var(--black-border); margin-top: 0.5rem;
     }
-
     .engine-card {
       background: var(--black-card);
       padding: 3rem 2.4rem;
-      position: relative; overflow: hidden;
-      transition: background 0.4s;
+      position: relative; overflow: hidden; transition: background 0.4s;
     }
     .engine-card::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 0;
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
       height: 2px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
       transform: scaleX(0);
@@ -369,67 +297,93 @@
     .engine-card:hover { background: #0a0a0a; }
     .engine-card:hover::after { transform: scaleX(1); }
 
-    .engine-number {
-      font-family: var(--font-display);
-      font-size: 4.5rem;
-      font-weight: 300;
-      color: var(--black-border);
-      line-height: 1;
-      margin-bottom: 1.2rem;
-      transition: color 0.4s;
+    .engine-number-badge {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px;
+      border: 1px solid var(--gold-dim);
+      font-family: var(--font-body);
+      font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 1.6rem;
     }
-    .engine-card:hover .engine-number { color: #222; }
 
     .engine-tag {
-      font-size: 0.54rem;
-      letter-spacing: 0.45em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.6rem;
+      font-size: 0.54rem; letter-spacing: 0.45em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem;
     }
-
     .engine-name {
       font-family: var(--font-display);
       font-size: 1.8rem; font-weight: 400;
-      color: var(--white);
-      margin-bottom: 1.4rem; line-height: 1.1;
+      color: var(--white); margin-bottom: 1rem; line-height: 1.1;
     }
-
+    .engine-desc {
+      font-size: 0.77rem; line-height: 1.9;
+      color: var(--white-dim); margin-bottom: 1.4rem;
+    }
+    .engine-divider {
+      width: 28px; height: 1px;
+      background: var(--gold-dim); margin-bottom: 1.4rem;
+    }
     .engine-list {
-      list-style: none;
-      display: flex; flex-direction: column; gap: 0.55rem;
+      list-style: none; display: flex; flex-direction: column; gap: 0.55rem;
     }
     .engine-list li {
-      font-size: 0.75rem;
-      color: var(--white-dim);
-      line-height: 1.6;
-      padding-left: 1rem;
-      position: relative;
+      font-size: 0.74rem; color: var(--white-dim);
+      line-height: 1.6; padding-left: 1rem; position: relative;
     }
     .engine-list li::before {
-      content: '';
-      position: absolute; left: 0; top: 0.55em;
-      width: 4px; height: 1px;
-      background: var(--gold-dim);
+      content: ''; position: absolute; left: 0; top: 0.6em;
+      width: 4px; height: 1px; background: var(--gold);
+    }
+
+    /* How it works */
+    #process { background: var(--black); border-top: 1px solid var(--black-border); }
+    .process-steps {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--black-border);
+      border: 1px solid var(--black-border); margin-top: 0.5rem;
+    }
+    .process-step {
+      background: var(--black-card);
+      padding: 3rem 2.4rem;
+      position: relative;
+    }
+    .step-number {
+      font-family: var(--font-display);
+      font-size: 5rem; font-weight: 300;
+      color: rgba(201,168,76,0.12);
+      line-height: 1; margin-bottom: 1.5rem;
+      transition: color 0.4s;
+    }
+    .process-step:hover .step-number { color: rgba(201,168,76,0.22); }
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem; font-weight: 400;
+      color: var(--white); margin-bottom: 0.8rem; line-height: 1.1;
+    }
+    .step-title em { color: var(--gold); font-style: italic; }
+    .step-desc {
+      font-size: 0.77rem; line-height: 1.95; color: var(--white-dim);
+    }
+    .step-connector {
+      position: absolute; top: 3.5rem; right: -1px;
+      width: 1px; height: 2rem; background: var(--gold-dim);
+      display: none;
     }
 
     /* About */
-    #about { background: var(--black); }
+    #about { background: var(--black-soft); }
     .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      gap: 6vw; align-items: center;
-      margin-top: 3rem;
+      display: grid; grid-template-columns: 1fr 1.3fr;
+      gap: 6vw; align-items: center; margin-top: 3rem;
     }
     .about-visual {
-      display: flex; align-items: center; justify-content: center;
-      position: relative;
+      display: flex; align-items: center; justify-content: center; position: relative;
     }
     .about-visual::before {
-      content: '';
-      position: absolute;
-      width: 320px; height: 320px;
-      border-radius: 50%;
+      content: ''; position: absolute;
+      width: 320px; height: 320px; border-radius: 50%;
       border: 1px solid rgba(201,168,76,0.15);
       animation: rotateSlow 18s linear infinite;
     }
@@ -438,24 +392,18 @@
       to   { transform: rotate(360deg); }
     }
     .logo-circle {
-      width: 260px; height: 260px;
-      border-radius: 50%;
-      border: 1px solid var(--gold-dim);
-      overflow: hidden;
-      background: var(--black-card);
-      position: relative; flex-shrink: 0;
+      width: 260px; height: 260px; border-radius: 50%;
+      border: 1px solid var(--gold-dim); overflow: hidden;
+      background: var(--black-card); position: relative; flex-shrink: 0;
     }
     .logo-circle::before {
-      content: '';
-      position: absolute; inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: radial-gradient(circle at center, rgba(201,168,76,0.1) 0%, transparent 70%);
       z-index: 1;
     }
     .logo-circle img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      mix-blend-mode: lighten;
-      opacity: 0.9;
+      width: 100%; height: 100%; object-fit: cover;
+      mix-blend-mode: lighten; opacity: 0.9;
     }
     .about-text p {
       font-size: 0.86rem; line-height: 2.15;
@@ -463,14 +411,36 @@
     }
     .about-text p strong { color: var(--white); font-weight: 400; }
 
+    /* CTA banner */
+    .cta-banner {
+      background: var(--black-card);
+      border-top: 1px solid var(--black-border);
+      border-bottom: 1px solid var(--black-border);
+      padding: 6rem 5vw;
+      text-align: center;
+    }
+    .cta-banner-label {
+      font-size: 0.6rem; letter-spacing: 0.45em;
+      text-transform: uppercase; color: var(--gold-dim); margin-bottom: 1.2rem;
+    }
+    .cta-banner-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      font-weight: 300; line-height: 1.1;
+      margin-bottom: 1.4rem;
+    }
+    .cta-banner-title em { color: var(--gold); font-style: italic; }
+    .cta-banner-sub {
+      font-size: 0.8rem; color: var(--white-dim);
+      line-height: 1.9; max-width: 500px;
+      margin: 0 auto 2.5rem;
+    }
+
     /* Founder */
-    #founders { background: var(--black-soft); }
+    #founders { background: var(--black); }
     .founders-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      max-width: 600px;
-      gap: 1.5rem;
-      margin: 3.5rem auto 0;
+      display: grid; grid-template-columns: 1fr;
+      max-width: 600px; gap: 1.5rem; margin: 3.5rem auto 0;
     }
     .founder-card {
       background: var(--black-card);
@@ -480,8 +450,7 @@
       transition: border-color 0.4s, transform 0.4s;
     }
     .founder-card::after {
-      content: '';
-      position: absolute; bottom: 0; left: 0; right: 0;
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
       transform: scaleX(0); transition: transform 0.4s;
@@ -490,34 +459,26 @@
     .founder-card:hover::after { transform: scaleX(1); }
     .founder-avatar {
       width: 72px; height: 72px; border-radius: 50%;
-      background: var(--black-border);
-      border: 1px solid var(--gold-dim);
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1.4rem;
+      background: var(--black-border); border: 1px solid var(--gold-dim);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem;
     }
     .founder-initials {
       font-family: var(--font-display);
-      font-size: 1.5rem; font-weight: 300;
-      color: var(--gold); line-height: 1;
+      font-size: 1.5rem; font-weight: 300; color: var(--gold); line-height: 1;
     }
     .founder-name {
       font-family: var(--font-display);
-      font-size: 1.5rem; font-weight: 400;
-      color: var(--white); margin-bottom: 0.3rem;
+      font-size: 1.5rem; font-weight: 400; color: var(--white); margin-bottom: 0.3rem;
     }
     .founder-role {
       font-size: 0.59rem; letter-spacing: 0.22em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 1.4rem;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 1.4rem;
     }
     .founder-bio {
       font-size: 0.78rem; line-height: 1.95;
       color: var(--white-dim); margin-bottom: 1.5rem;
     }
-    .founder-divider {
-      width: 28px; height: 1px;
-      background: var(--gold-dim); margin-bottom: 1.4rem;
-    }
+    .founder-divider { width: 28px; height: 1px; background: var(--gold-dim); margin-bottom: 1.4rem; }
     .founder-links { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
     .founder-links li {
       font-size: 0.7rem; color: var(--white-dim);
@@ -527,25 +488,21 @@
     .founder-links a:hover { color: var(--gold-light); }
 
     /* Contact */
-    #contact { background: var(--black); }
+    #contact { background: var(--black-soft); }
     .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 6vw; align-items: start;
-      margin-top: 3rem;
+      display: grid; grid-template-columns: 1fr 1.5fr;
+      gap: 6vw; align-items: start; margin-top: 3rem;
     }
     .contact-info { display: flex; flex-direction: column; gap: 2.2rem; }
     .contact-item { display: flex; gap: 1.2rem; align-items: flex-start; }
     .contact-icon {
       width: 46px; height: 46px; flex-shrink: 0;
       border: 1px solid var(--gold-dim);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.95rem;
+      display: flex; align-items: center; justify-content: center; font-size: 0.95rem;
     }
     .contact-label {
       font-size: 0.57rem; letter-spacing: 0.32em;
-      text-transform: uppercase; color: var(--gold-dim);
-      margin-bottom: 0.4rem;
+      text-transform: uppercase; color: var(--gold-dim); margin-bottom: 0.4rem;
     }
     .contact-value {
       font-family: var(--font-display);
@@ -553,17 +510,17 @@
     }
     .contact-value a { color: var(--white); text-decoration: none; transition: color 0.3s; }
     .contact-value a:hover { color: var(--gold-light); }
-
+    .contact-note {
+      font-size: 0.74rem; line-height: 1.85;
+      color: var(--white-dim); margin-top: 2rem;
+      padding-top: 2rem; border-top: 1px solid var(--black-border);
+    }
     .contact-form-wrap {
       border: 1px solid var(--black-border);
-      background: var(--black-card);
-      overflow: hidden;
+      background: var(--black-card); overflow: hidden;
     }
     .contact-form-wrap iframe {
-      display: block;
-      width: 100%;
-      border: none;
-      min-height: 684px;
+      display: block; width: 100%; border: none; min-height: 684px;
     }
 
     /* Footer */
@@ -577,12 +534,22 @@
       font-family: var(--font-display);
       font-size: 1.1rem; color: var(--gold); letter-spacing: 0.18em;
     }
+    .footer-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.6rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--white-dim);
+      text-decoration: none; transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--gold-light); }
     .footer-copy {
       font-size: 0.59rem; letter-spacing: 0.15em; color: var(--white-dim);
     }
     .footer-copy a { color: var(--gold-dim); text-decoration: none; transition: color 0.3s; }
     .footer-copy a:hover { color: var(--gold-light); }
 
+    /* Animations */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(28px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -593,32 +560,31 @@
     }
     .reveal.visible { opacity: 1; transform: none; }
 
+    /* Responsive */
     @media (max-width: 1100px) {
       #hero { grid-template-columns: 1fr; }
-      .hero-image-wrap {
-        position: absolute; inset: 0;
-        opacity: 0.45; z-index: 0;
-      }
+      .hero-image-wrap { position: absolute; inset: 0; opacity: 0.45; z-index: 0; }
       #hero::before {
         background: linear-gradient(135deg, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.6) 100%);
         z-index: 1;
       }
-      .hero-content {
-        position: relative; z-index: 2;
-        padding: 9rem 5vw 6rem;
-        max-width: 620px;
-      }
+      .hero-content { position: relative; z-index: 2; padding: 9rem 5vw 6rem; max-width: 620px; }
       .scroll-hint { z-index: 2; }
     }
     @media (max-width: 900px) {
-      .about-grid     { grid-template-columns: 1fr; }
-      .contact-grid   { grid-template-columns: 1fr; }
-      .engines-grid   { grid-template-columns: 1fr; }
+      .about-grid       { grid-template-columns: 1fr; }
+      .contact-grid     { grid-template-columns: 1fr; }
+      .engines-grid     { grid-template-columns: 1fr; }
+      .process-steps    { grid-template-columns: 1fr; }
+      .statement-bar    { gap: 1.5rem; }
     }
     @media (max-width: 640px) {
       .nav-links, .nav-cta { display: none; }
       .nav-toggle { display: flex; }
       .hero-title { font-size: clamp(3rem, 13vw, 4rem); }
+      .statement-bar { flex-direction: column; gap: 1rem; text-align: center; }
+      .statement-bar-dot { display: none; }
+      .footer-links { display: none; }
     }
   </style>
 </head>
@@ -628,8 +594,8 @@
   <button class="mobile-close" id="mobileClose" aria-label="Close">×</button>
   <a href="#hero"     onclick="closeMobileMenu()">Home</a>
   <a href="#services" onclick="closeMobileMenu()">Services</a>
+  <a href="#process"  onclick="closeMobileMenu()">Process</a>
   <a href="#about"    onclick="closeMobileMenu()">About</a>
-  <a href="#founders" onclick="closeMobileMenu()">Founder</a>
   <a href="#contact"  onclick="closeMobileMenu()">Contact</a>
 </div>
 
@@ -641,8 +607,8 @@
   <ul class="nav-links">
     <li><a href="#hero">Home</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#founders">Founder</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <a class="nav-cta" href="./portal.html">Client Portal</a>
@@ -651,6 +617,7 @@
   </button>
 </nav>
 
+<!-- Hero -->
 <section id="hero">
   <div class="hero-content">
     <p class="hero-eyebrow">Home Service Marketing, New York</p>
@@ -675,18 +642,32 @@
   </div>
 </section>
 
+<!-- Statement bar -->
+<div class="statement-bar">
+  <div class="statement-bar-item">Social Media &amp; Content</div>
+  <div class="statement-bar-dot"></div>
+  <div class="statement-bar-item">Google Ads &amp; Local SEO</div>
+  <div class="statement-bar-dot"></div>
+  <div class="statement-bar-item">CRM &amp; Automation</div>
+  <div class="statement-bar-dot"></div>
+  <div class="statement-bar-item">Personal Brand Photography</div>
+</div>
+
+<!-- Services -->
 <section id="services">
   <div class="section-inner">
     <span class="package-label reveal">Core Package</span>
     <h2 class="section-title reveal">Akoro's <em>Acquisition System</em></h2>
     <div class="gold-line reveal"></div>
-    <p class="section-sub reveal">Three engines, one system. Built to put high-value home service companies in front of the right people, capture demand, and convert leads into booked jobs automatically.</p>
+    <p class="section-sub reveal">Three engines, one system. Built to put high-value home service companies in front of the right people, capture local demand, and convert leads into booked jobs automatically.</p>
     <div class="engines-grid">
 
       <div class="engine-card reveal">
-        <div class="engine-number">01</div>
+        <div class="engine-number-badge">01</div>
         <p class="engine-tag">Attention Engine</p>
         <div class="engine-name">Content &amp; Visibility</div>
+        <p class="engine-desc">We build the content that makes people stop scrolling and start recognizing your name. Every piece is designed to position you as the authority in your market before they ever reach out.</p>
+        <div class="engine-divider"></div>
         <ul class="engine-list">
           <li>Short-form video production</li>
           <li>Before &amp; after content</li>
@@ -697,9 +678,11 @@
       </div>
 
       <div class="engine-card reveal">
-        <div class="engine-number">02</div>
+        <div class="engine-number-badge">02</div>
         <p class="engine-tag">Demand Engine</p>
         <div class="engine-name">Google &amp; Local Search</div>
+        <p class="engine-desc">We put you in front of people already searching for what you do. Google Ads, local SEO, and a fully optimized Google Business Profile that turns browsers into callers.</p>
+        <div class="engine-divider"></div>
         <ul class="engine-list">
           <li>Google Ads management</li>
           <li>Local SEO</li>
@@ -710,9 +693,11 @@
       </div>
 
       <div class="engine-card reveal">
-        <div class="engine-number">03</div>
+        <div class="engine-number-badge">03</div>
         <p class="engine-tag">Revenue Engine</p>
         <div class="engine-name">Automation &amp; Follow-Up</div>
+        <p class="engine-desc">Leads don't close themselves. Our automation responds instantly, books appointments, and manages your pipeline so no job falls through the cracks while you're on site.</p>
+        <div class="engine-divider"></div>
         <ul class="engine-list">
           <li>Automated text follow-up</li>
           <li>Missed-call text back</li>
@@ -726,6 +711,38 @@
   </div>
 </section>
 
+<!-- How it works -->
+<section id="process">
+  <div class="section-inner">
+    <p class="section-label reveal">How It Works</p>
+    <h2 class="section-title reveal">From Day One to <em>Booked Jobs</em></h2>
+    <div class="gold-line reveal"></div>
+    <p class="section-sub reveal">We don't hand you a playbook and wish you luck. We build the system, run it, and optimize it every week so you can stay focused on the work.</p>
+    <div class="process-steps">
+
+      <div class="process-step reveal">
+        <div class="step-number">01</div>
+        <div class="step-title"><em>Audit</em> &amp; Strategy</div>
+        <p class="step-desc">We start by mapping your market, your competitors, and every gap in your current online presence. You get a clear picture of where demand exists and exactly how we're going to capture it.</p>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="step-number">02</div>
+        <div class="step-title"><em>Build</em> &amp; Launch</div>
+        <p class="step-desc">We set up all three engines: content creation, Google presence, and automated follow-up. Everything is built to your brand and live within weeks, not months. No long onboarding cycles.</p>
+      </div>
+
+      <div class="process-step reveal">
+        <div class="step-number">03</div>
+        <div class="step-title"><em>Optimize</em> &amp; Scale</div>
+        <p class="step-desc">Every week we review the data, cut what isn't working, and double down on what is. As results compound, we scale the channels that are driving real booked jobs for your business.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- About -->
 <section id="about">
   <div class="section-inner">
     <p class="section-label reveal">Our Story</p>
@@ -739,14 +756,27 @@
       </div>
       <div class="about-text">
         <p class="reveal"><strong>Akoro Digital</strong> is a marketing agency based in New York, built specifically for high-value home service companies: contractors, builders, technicians, and service providers who are great at their work but don't have time to market it.</p>
-        <p class="reveal">We build customer acquisition systems that turn local demand into booked jobs. Social media, Google ads, personal brand photography, websites, and SMS automation, all under one roof. No juggling vendors, no explaining yourself twice.</p>
-        <p class="reveal">We move fast, stay direct, and focus on what actually moves the needle. Good creative backed by a clear strategy is the most reliable way to grow a home service business online, and that's what we deliver.</p>
+        <p class="reveal">Most agencies hand you a dashboard and a monthly report. We build a complete customer acquisition system and run it for you. Social media, Google ads, personal brand photography, websites, and SMS automation, all under one roof. No juggling vendors, no explaining yourself twice.</p>
+        <p class="reveal">We work directly with a focused group of clients. That means every client gets Marcos, not a junior account manager. The strategy is personal, the execution is fast, and the work reflects the actual business.</p>
         <p class="reveal">The name <em style="color:var(--gold)">Akoro</em> reflects how we think about our work: built to last, not just built to impress.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CTA Banner -->
+<div class="cta-banner">
+  <p class="cta-banner-label reveal">Ready to grow?</p>
+  <h2 class="cta-banner-title reveal">Stop leaving local demand<br>on the <em>table</em>.</h2>
+  <p class="cta-banner-sub reveal">High-value home service companies that want a full acquisition system, not just a social media manager.</p>
+  <div class="reveal">
+    <button class="btn-gold" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+      <span>Book a Discovery Call</span>
+    </button>
+  </div>
+</div>
+
+<!-- About the Founder -->
 <section id="founders">
   <div class="section-inner">
     <p class="section-label reveal">The Founder</p>
@@ -757,7 +787,7 @@
         <div class="founder-avatar"><span class="founder-initials">MP</span></div>
         <div class="founder-name">Marcos Patino</div>
         <div class="founder-role">Founder &amp; CEO</div>
-        <p class="founder-bio">Marcos built Akoro specifically for high-value home service companies. Contractors, builders, and service providers are great at what they do but rarely have the time or tools to market it effectively. He works directly with every client, handles the strategy, and makes sure what gets built actually reflects the business and drives real results.</p>
+        <p class="founder-bio">Marcos built Akoro specifically for high-value home service companies. Contractors, builders, and service providers are great at what they do but rarely have the time or tools to market it effectively. He works directly with every client, handles the strategy personally, and makes sure what gets built actually reflects the business and drives real results. No account managers. No handoffs. Just direct access to the person running your marketing.</p>
         <div class="founder-divider"></div>
         <ul class="founder-links">
           <li><span>🔗</span><a href="https://www.linkedin.com/in/marcos-patino-b5027b34b/" target="_blank" rel="noopener">LinkedIn Profile</a></li>
@@ -768,6 +798,7 @@
   </div>
 </section>
 
+<!-- Contact -->
 <section id="contact">
   <div class="section-inner">
     <p class="section-label reveal">Get In Touch</p>
@@ -777,16 +808,26 @@
       <div class="contact-info">
         <div class="contact-item reveal">
           <div class="contact-icon">✉</div>
-          <div><div class="contact-label">General Inquiries</div><div class="contact-value"><a href="mailto:AkoroDigital@gmail.com">AkoroDigital@gmail.com</a></div></div>
+          <div>
+            <div class="contact-label">General Inquiries</div>
+            <div class="contact-value"><a href="mailto:AkoroDigital@gmail.com">AkoroDigital@gmail.com</a></div>
+          </div>
         </div>
         <div class="contact-item reveal">
           <div class="contact-icon">📍</div>
-          <div><div class="contact-label">Headquarters</div><div class="contact-value">New York, NY</div></div>
+          <div>
+            <div class="contact-label">Headquarters</div>
+            <div class="contact-value">New York, NY</div>
+          </div>
         </div>
         <div class="contact-item reveal">
           <div class="contact-icon">📱</div>
-          <div><div class="contact-label">Follow Us</div><div class="contact-value"><a href="https://instagram.com/akoro.digital" target="_blank" rel="noopener">@akoro.digital</a></div></div>
+          <div>
+            <div class="contact-label">Follow Us</div>
+            <div class="contact-value"><a href="https://instagram.com/akoro.digital" target="_blank" rel="noopener">@akoro.digital</a></div>
+          </div>
         </div>
+        <p class="contact-note reveal">Fill out the form and we'll get back to you within 24 hours. Or book a call directly through the <a href="./portal.html" style="color:var(--gold-light);text-decoration:none;">Client Portal</a>.</p>
       </div>
       <div class="contact-form-wrap reveal">
         <iframe
@@ -811,6 +852,12 @@
 
 <footer>
   <div class="footer-logo">AKORO DIGITAL</div>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="./portal.html">Client Portal</a></li>
+  </ul>
   <div class="footer-copy">&copy; 2026 Akoro Digital. All rights reserved. &nbsp;|&nbsp; <a href="mailto:AkoroDigital@gmail.com">AkoroDigital@gmail.com</a></div>
 </footer>
 
