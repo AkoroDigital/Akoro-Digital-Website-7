@@ -377,34 +377,41 @@
     #about { background: var(--black-soft); }
     .about-grid {
       display: grid; grid-template-columns: 1fr 1.3fr;
-      gap: 6vw; align-items: center; margin-top: 3rem;
+      gap: 6vw; align-items: start; margin-top: 3rem;
     }
     .about-visual {
-      display: flex; align-items: center; justify-content: center; position: relative;
+      display: flex; align-items: flex-start; justify-content: center; position: relative;
     }
-    .about-visual::before {
-      content: ''; position: absolute;
-      width: 320px; height: 320px; border-radius: 50%;
-      border: 1px solid rgba(201,168,76,0.15);
-      animation: rotateSlow 18s linear infinite;
+    .about-video-wrap {
+      position: relative; width: 100%;
+      border: 1px solid var(--black-border);
+      overflow: hidden;
+      background: var(--black-card);
     }
-    @keyframes rotateSlow {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
+    .about-video-wrap::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(to bottom, rgba(5,5,5,0.5), transparent);
+      z-index: 2; pointer-events: none;
     }
-    .logo-circle {
-      width: 260px; height: 260px; border-radius: 50%;
-      border: 1px solid var(--gold-dim); overflow: hidden;
-      background: var(--black-card); position: relative; flex-shrink: 0;
+    .about-video-wrap::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(to top, rgba(5,5,5,0.5), transparent);
+      z-index: 2; pointer-events: none;
     }
-    .logo-circle::before {
-      content: ''; position: absolute; inset: 0;
-      background: radial-gradient(circle at center, rgba(201,168,76,0.1) 0%, transparent 70%);
-      z-index: 1;
+    .about-video-wrap video {
+      display: block; width: 100%;
+      aspect-ratio: 9/16;
+      object-fit: cover;
     }
-    .logo-circle img {
-      width: 100%; height: 100%; object-fit: cover;
-      mix-blend-mode: lighten; opacity: 0.9;
+    .about-video-label {
+      position: absolute; bottom: 1.2rem; left: 1.4rem;
+      z-index: 3;
+      font-size: 0.54rem; letter-spacing: 0.4em;
+      text-transform: uppercase; color: var(--gold-dim);
     }
     .about-text p {
       font-size: 0.86rem; line-height: 2.15;
@@ -751,8 +758,11 @@
     <div class="gold-line reveal"></div>
     <div class="about-grid">
       <div class="about-visual reveal">
-        <div class="logo-circle">
-          <img src="./akoro-logo-new.png" alt="Akoro Digital Logo"/>
+        <div class="about-video-wrap">
+          <video autoplay muted loop playsinline preload="none">
+            <source src="./revision-one.mov" type="video/mp4">
+          </video>
+          <span class="about-video-label">Akoro Digital</span>
         </div>
       </div>
       <div class="about-text">
